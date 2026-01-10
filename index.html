@@ -3,27 +3,334 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=public/index.html" />
-    <title>ConectaCRM - Redirecionando</title>
-    <style>
-      body {
-        font-family: "Inter", system-ui, sans-serif;
-        background: #f4f6fb;
-        color: #0f172a;
-        display: grid;
-        place-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      a {
-        color: #4f46e5;
-      }
-    </style>
+    <title>ConectaCRM - CRM e Automação para Mensageiros</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <main>
-      <h1>Redirecionando para o ConectaCRM</h1>
-      <p>Se a prévia não abrir automaticamente, <a href="public/index.html">clique aqui</a>.</p>
-    </main>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="logo">C</span>
+          <div>
+            <strong>ConectaCRM</strong>
+            <small>Mensageiros + Automação</small>
+          </div>
+        </div>
+        <nav>
+          <a class="active" href="#visao-geral">Visão geral</a>
+          <a href="#inbox">Inbox multicanal</a>
+          <a href="#funil">Funil visual</a>
+          <a href="#automacao">Automação no-code</a>
+          <a href="#landing">Landing pages</a>
+          <a href="#segmentacao">Segmentação & scoring</a>
+          <a href="#chatbots">Chatbots IA</a>
+          <a href="#remarketing">Disparo & remarketing</a>
+          <a href="#relatorios">Relatórios & BI</a>
+          <a href="#seguranca">Segurança & LGPD</a>
+          <a href="#escalabilidade">Escalabilidade</a>
+        </nav>
+        <div class="sidebar-cta">
+          <p>Teste gratuito de 14 dias</p>
+          <button>Iniciar agora</button>
+        </div>
+      </aside>
+      <main>
+        <header class="topbar">
+          <div>
+            <h1>CRM e automação completos para vendas via mensageiros</h1>
+            <p>
+              Centralize conversas, automatize follow-ups e acompanhe o funil em tempo real com
+              um produto pensado para PMEs.
+            </p>
+          </div>
+          <div class="topbar-actions">
+            <button class="ghost">Português</button>
+            <button class="ghost">English</button>
+            <button class="ghost">Español</button>
+            <button class="primary">Agendar demonstração</button>
+          </div>
+        </header>
+
+        <section id="visao-geral" class="hero">
+          <div>
+            <h2>Transforme cada conversa em receita previsível</h2>
+            <p>
+              ConectaCRM combina inbox multicanal, automações no-code, bots com IA e análises
+              unificadas para acelerar suas vendas no WhatsApp, Instagram, Telegram, e-mail e chat do site.
+            </p>
+            <div class="hero-tags">
+              <span>API oficial do WhatsApp</span>
+              <span>LGPD/GDPR pronto</span>
+              <span>API aberta</span>
+              <span>Suporte PT/EN/ES</span>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h3>Próximas ações inteligentes</h3>
+            <ul>
+              <li>Lead inativo há 3 dias → enviar WhatsApp com oferta.</li>
+              <li>Formulário de orçamento → criar oportunidade no funil.</li>
+              <li>Cliente VIP → direcionar para equipe premium.</li>
+            </ul>
+            <button class="primary">Explorar automações</button>
+          </div>
+        </section>
+
+        <section id="inbox" class="grid-section">
+          <div class="section-title">
+            <h2>Inbox multicanal com perfil unificado</h2>
+            <p>Visualize toda a jornada do contato em um único cartão com histórico e campos personalizados.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Central de conversas</h3>
+              <p>WhatsApp oficial, Instagram, Telegram, e-mail e chat do site em uma única fila inteligente.</p>
+            </article>
+            <article class="card">
+              <h3>Perfil 360°</h3>
+              <p>Histórico completo, preferências, tags, anexos e campos customizados por equipe.</p>
+            </article>
+            <article class="card">
+              <h3>SLA e produtividade</h3>
+              <p>Alertas de tempo médio de atendimento, fila prioritária e distribuição automática.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="funil" class="grid-section alt">
+          <div class="section-title">
+            <h2>Funil visual de marketing e vendas</h2>
+            <p>Kanban e lista com métricas de conversão, TMA e produtividade por etapa.</p>
+          </div>
+          <div class="kanban">
+            <div class="kanban-column">
+              <h4>Novos leads</h4>
+              <div class="kanban-card">Campanha Instagram • 42 leads</div>
+              <div class="kanban-card">Landing "Ebook" • 18 leads</div>
+            </div>
+            <div class="kanban-column">
+              <h4>Qualificação</h4>
+              <div class="kanban-card">Score &gt; 70 • 12 leads</div>
+              <div class="kanban-card">Bot qualificador ativo</div>
+            </div>
+            <div class="kanban-column">
+              <h4>Proposta enviada</h4>
+              <div class="kanban-card">Tempo médio: 2h 15m</div>
+              <div class="kanban-card">Conversão: 38%</div>
+            </div>
+            <div class="kanban-column highlight">
+              <h4>Fechamento</h4>
+              <div class="kanban-card">Receita projetada R$ 210k</div>
+              <div class="kanban-card">Equipe 03 • 92% SLA</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="automacao" class="grid-section">
+          <div class="section-title">
+            <h2>Automação no-code</h2>
+            <p>Arraste e solte gatilhos, ações e condições para criar jornadas inteligentes.</p>
+          </div>
+          <div class="flow">
+            <div class="flow-node">Gatilho: clique no e-mail</div>
+            <div class="flow-node">Condição: score &gt; 60</div>
+            <div class="flow-node">Ação: enviar WhatsApp</div>
+            <div class="flow-node">Ação: atualizar status</div>
+            <div class="flow-node">Aguardar 24h</div>
+            <div class="flow-node">Ação: criar tarefa</div>
+          </div>
+        </section>
+
+        <section id="landing" class="grid-section alt">
+          <div class="section-title">
+            <h2>Construtor de landing pages e formulários</h2>
+            <p>Templates personalizáveis com pop-ups, formulários inteligentes e botão de WhatsApp.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Templates responsivos</h3>
+              <p>Escolha entre páginas para webinars, lançamentos e captação de leads.</p>
+              <button class="ghost">Ver modelos</button>
+            </article>
+            <article class="card">
+              <h3>Formulários conectados</h3>
+              <p>Dados enviados direto para o inbox e funil com automações instantâneas.</p>
+              <button class="ghost">Criar formulário</button>
+            </article>
+            <article class="card">
+              <h3>CTA WhatsApp</h3>
+              <p>Botão flutuante com horários de atendimento e tracking de campanhas.</p>
+              <button class="ghost">Ativar agora</button>
+            </article>
+          </div>
+        </section>
+
+        <section id="segmentacao" class="grid-section">
+          <div class="section-title">
+            <h2>Segmentação avançada e lead scoring</h2>
+            <p>Combine dados demográficos, comportamento e engajamento para priorizar oportunidades.</p>
+          </div>
+          <div class="scoreboard">
+            <div>
+              <h3>Segmentos dinâmicos</h3>
+              <ul>
+                <li>Gestores de vendas com mais de 5 atendentes</li>
+                <li>Leads que interagiram com 3 campanhas no mês</li>
+                <li>Clientes com NPS &gt; 8 e ticket médio alto</li>
+              </ul>
+            </div>
+            <div class="score-card">
+              <h4>Lead Score</h4>
+              <p>Atualizado automaticamente com base em ações, visitas e respostas.</p>
+              <div class="score">82</div>
+              <small>Prioridade: alta</small>
+            </div>
+          </div>
+        </section>
+
+        <section id="chatbots" class="grid-section alt">
+          <div class="section-title">
+            <h2>Chatbots e assistentes de IA</h2>
+            <p>Construa fluxos lógicos e conecte com modelos de linguagem para suporte 24/7.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Treinamento com documentos</h3>
+              <p>Suba PDFs, políticas e catálogos para respostas consistentes.</p>
+            </article>
+            <article class="card">
+              <h3>Hand-off humano</h3>
+              <p>Transferência automática para atendentes quando necessário.</p>
+            </article>
+            <article class="card">
+              <h3>Coleta de dados</h3>
+              <p>Formulários conversacionais para capturar dados críticos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="remarketing" class="grid-section">
+          <div class="section-title">
+            <h2>Disparo em massa e remarketing</h2>
+            <p>Envios seguros e segmentados com follow-ups agendados e reengajamento automático.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>WhatsApp oficial</h3>
+              <p>Baixa chance de banimento com templates aprovados e opt-in válido.</p>
+            </article>
+            <article class="card">
+              <h3>Sequências inteligentes</h3>
+              <p>Follow-ups por e-mail e mensageiro baseados em inatividade.</p>
+            </article>
+            <article class="card">
+              <h3>Funil de remarketing</h3>
+              <p>Detecta leads frios e reativa com ofertas e conteúdo relevante.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="relatorios" class="grid-section alt">
+          <div class="section-title">
+            <h2>Relatórios e BI unificados</h2>
+            <p>Métricas operacionais e de campanhas em dashboards personalizáveis.</p>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <h4>TMA</h4>
+              <strong>1m 48s</strong>
+              <span>Meta: 2m</span>
+            </div>
+            <div class="metric">
+              <h4>Conversão</h4>
+              <strong>42%</strong>
+              <span>+8% vs mês anterior</span>
+            </div>
+            <div class="metric">
+              <h4>ROI campanhas</h4>
+              <strong>6,2x</strong>
+              <span>Campanhas de remarketing</span>
+            </div>
+            <div class="metric">
+              <h4>Produtividade</h4>
+              <strong>32 atendimentos/dia</strong>
+              <span>Equipe Atendimento 2</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="seguranca" class="grid-section">
+          <div class="section-title">
+            <h2>Conformidade, segurança e disponibilidade</h2>
+            <p>LGPD/GDPR, consentimento registrado e alta disponibilidade para times em crescimento.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Duplo opt-in</h3>
+              <p>Registro de consentimento com prova de origem e auditoria completa.</p>
+            </article>
+            <article class="card">
+              <h3>Controles de privacidade</h3>
+              <p>Anonimização, exclusão sob demanda e políticas por departamento.</p>
+            </article>
+            <article class="card">
+              <h3>Infra escalável</h3>
+              <p>Cluster multi-região com 99,9% uptime e monitoramento 24/7.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="escalabilidade" class="grid-section alt">
+          <div class="section-title">
+            <h2>Escalabilidade e governança</h2>
+            <p>Usuários ilimitados, múltiplos departamentos e fluxos específicos por canal.</p>
+          </div>
+          <div class="split">
+            <div>
+              <h3>Gestão multi-times</h3>
+              <p>Crie squads por região, produto ou canal com relatórios dedicados.</p>
+              <ul>
+                <li>Perfis e permissões avançadas</li>
+                <li>Playbooks personalizados por canal</li>
+                <li>Distribuição automática de leads</li>
+              </ul>
+            </div>
+            <div class="plans">
+              <h3>Planos mensais</h3>
+              <div class="plan">
+                <h4>Start</h4>
+                <p>R$ 299/mês</p>
+                <span>até 5 usuários</span>
+              </div>
+              <div class="plan highlight">
+                <h4>Growth</h4>
+                <p>R$ 699/mês</p>
+                <span>usuários ilimitados</span>
+              </div>
+              <div class="plan">
+                <h4>Scale</h4>
+                <p>R$ 1.499/mês</p>
+                <span>departamentos ilimitados</span>
+              </div>
+              <small>Teste gratuito de 14 dias • API pública para integrações externas</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta">
+          <div>
+            <h2>Integre com suas ferramentas favoritas</h2>
+            <p>API aberta, webhooks e conectores com CRM, ERP e plataformas de mídia paga.</p>
+          </div>
+          <button class="primary">Falar com especialistas</button>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

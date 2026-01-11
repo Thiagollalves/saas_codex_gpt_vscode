@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ConectaCRM • App CRM e Automação</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="logo">C</span>
+          <div>
+            <strong>ConectaCRM</strong>
+            <small>CRM + Automação</small>
+          </div>
+        </div>
+        <div class="sidebar-search">
+          <input type="search" placeholder="Buscar recursos" aria-label="Buscar" />
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-link active" data-view="overview">Visão geral</button>
+          <button class="nav-link" data-view="inbox">Inbox multicanal</button>
+          <button class="nav-link" data-view="pipeline">Funil de vendas</button>
+          <button class="nav-link" data-view="automation">Automações no-code</button>
+          <button class="nav-link" data-view="landing">Landing pages & forms</button>
+          <button class="nav-link" data-view="segmentation">Segmentação & scoring</button>
+          <button class="nav-link" data-view="bots">Chatbots & IA</button>
+          <button class="nav-link" data-view="campaigns">Disparo & remarketing</button>
+          <button class="nav-link" data-view="reports">Relatórios & BI</button>
+          <button class="nav-link" data-view="compliance">LGPD & segurança</button>
+          <button class="nav-link" data-view="settings">Configurações</button>
+        </nav>
+        <div class="sidebar-cta">
+          <p>Teste grátis de 14 dias</p>
+          <button class="primary">Ativar conta</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Olá, Thiago 👋</h1>
+            <p>Você está acompanhando 128 conversas ativas e 42 oportunidades em aberto.</p>
+          </div>
+          <div class="topbar-actions">
+            <button class="ghost">Português</button>
+            <button class="ghost">English</button>
+            <button class="ghost">Español</button>
+            <button class="primary">Nova automação</button>
+          </div>
+        </header>
+
+        <section class="view active" data-view="overview">
+          <div class="grid-two">
+            <div class="card">
+              <h2>Resumo operacional</h2>
+              <p>Indicadores em tempo real para todo o time comercial.</p>
+              <div class="metrics">
+                <div class="metric">
+                  <span>TMA</span>
+                  <strong>1m 48s</strong>
+                  <small>Meta 2m</small>
+                </div>
+                <div class="metric">
+                  <span>Conversão</span>
+                  <strong>42%</strong>
+                  <small>+8% mês</small>
+                </div>
+                <div class="metric">
+                  <span>Leads ativos</span>
+                  <strong>1.284</strong>
+                  <small>+120 esta semana</small>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h2>Próximas ações inteligentes</h2>
+              <ul class="checklist">
+                <li>Lead inativo há 3 dias → WhatsApp automático</li>
+                <li>Cliente VIP → transferir para atendimento premium</li>
+                <li>Formulário de orçamento → criar oportunidade</li>
+                <li>Instagram DM → inserir no funil de qualificação</li>
+              </ul>
+              <button class="ghost">Ver automações sugeridas</button>
+            </div>
+          </div>
+          <div class="grid-three">
+            <article class="card">
+              <h3>Inbox multicanal</h3>
+              <p>WhatsApp oficial, Instagram, Telegram, e-mail e chat do site.</p>
+              <button class="ghost">Abrir inbox</button>
+            </article>
+            <article class="card">
+              <h3>Construtor no-code</h3>
+              <p>Crie fluxos com gatilhos, condições e ações.</p>
+              <button class="ghost">Criar fluxo</button>
+            </article>
+            <article class="card">
+              <h3>BI unificado</h3>
+              <p>Dashboards com produtividade, ROI e canais.</p>
+              <button class="ghost">Ver relatórios</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" data-view="inbox">
+          <div class="section-header">
+            <div>
+              <h2>Inbox multicanal</h2>
+              <p>Centralize conversas e visualize o perfil 360° do contato.</p>
+            </div>
+            <div class="header-actions">
+              <button class="ghost">Filtros</button>
+              <button class="primary">Novo atendimento</button>
+            </div>
+          </div>
+          <div class="inbox">
+            <div class="inbox-list">
+              <div class="inbox-card active">
+                <strong>Mariana Silva</strong>
+                <span>WhatsApp • Orçamento</span>
+                <small>Última mensagem há 3 min</small>
+              </div>
+              <div class="inbox-card">
+                <strong>Lucas Almeida</strong>
+                <span>Instagram • Campanha Black</span>
+                <small>Última mensagem há 12 min</small>
+              </div>
+              <div class="inbox-card">
+                <strong>Empresa Beta</strong>
+                <span>E-mail • Renovação</span>
+                <small>Última mensagem há 1h</small>
+              </div>
+              <div class="inbox-card">
+                <strong>Ana Costa</strong>
+                <span>Telegram • Suporte</span>
+                <small>Última mensagem ontem</small>
+              </div>
+            </div>
+            <div class="conversation">
+              <div class="conversation-header">
+                <div>
+                  <h3>Mariana Silva</h3>
+                  <span>Lead qualificado • Score 82</span>
+                </div>
+                <button class="ghost">Perfil completo</button>
+              </div>
+              <div class="conversation-body">
+                <div class="bubble received">Olá! Quero entender os planos para 10 usuários.</div>
+                <div class="bubble sent">Oi, Mariana! Posso te enviar uma proposta personalizada.</div>
+                <div class="bubble received">Perfeito, preciso integrar com WhatsApp.</div>
+              </div>
+              <div class="conversation-footer">
+                <input type="text" placeholder="Escreva sua resposta" />
+                <button class="primary">Enviar</button>
+              </div>
+            </div>
+            <div class="profile-card">
+              <h3>Perfil 360°</h3>
+              <ul>
+                <li>Origem: Campanha Instagram</li>
+                <li>Segmento: Varejo</li>
+                <li>Último contato: 3 min</li>
+                <li>Interesse: WhatsApp + Automação</li>
+              </ul>
+              <button class="ghost">Editar campos</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="pipeline">
+          <div class="section-header">
+            <div>
+              <h2>Funil visual de marketing e vendas</h2>
+              <p>Arraste cards entre etapas e acompanhe métricas de conversão.</p>
+            </div>
+            <button class="ghost" id="reset-kanban" type="button">Resetar quadro</button>
+          </div>
+          <div class="kanban">
+            <div class="kanban-column" data-column="novos">
+              <h4>Novos leads</h4>
+              <div class="kanban-card draggable" draggable="true" data-id="lead-instagram">
+                Campanha Instagram • 42 leads
+              </div>
+              <div class="kanban-card draggable" draggable="true" data-id="lead-ebook">
+                Landing "Ebook" • 18 leads
+              </div>
+            </div>
+            <div class="kanban-column" data-column="qualificacao">
+              <h4>Qualificação</h4>
+              <div class="kanban-card draggable" draggable="true" data-id="lead-score">
+                Score &gt; 70 • 12 leads
+              </div>
+              <div class="kanban-card draggable" draggable="true" data-id="bot-qualificador">
+                Bot qualificador ativo
+              </div>
+            </div>
+            <div class="kanban-column" data-column="proposta">
+              <h4>Proposta enviada</h4>
+              <div class="kanban-card draggable" draggable="true" data-id="tempo-medio">
+                Tempo médio: 2h 15m
+              </div>
+              <div class="kanban-card draggable" draggable="true" data-id="conversao">
+                Conversão: 38%
+              </div>
+            </div>
+            <div class="kanban-column highlight" data-column="fechamento">
+              <h4>Fechamento</h4>
+              <div class="kanban-card draggable" draggable="true" data-id="receita-projetada">
+                Receita projetada R$ 210k
+              </div>
+              <div class="kanban-card draggable" draggable="true" data-id="equipe-sla">
+                Equipe 03 • 92% SLA
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="automation">
+          <div class="section-header">
+            <div>
+              <h2>Automação no-code</h2>
+              <p>Monte jornadas arrastando gatilhos, ações e condições.</p>
+            </div>
+            <button class="primary" id="save-flow" type="button">Salvar fluxo</button>
+          </div>
+          <div class="automation">
+            <div class="automation-palette">
+              <h3>Componentes</h3>
+              <button class="ghost" data-node="Gatilho: clique no e-mail">Gatilho: clique no e-mail</button>
+              <button class="ghost" data-node="Gatilho: formulário enviado">Gatilho: formulário enviado</button>
+              <button class="ghost" data-node="Condição: score &gt; 60">Condição: score &gt; 60</button>
+              <button class="ghost" data-node="Ação: enviar WhatsApp">Ação: enviar WhatsApp</button>
+              <button class="ghost" data-node="Ação: atualizar status">Ação: atualizar status</button>
+              <button class="ghost" data-node="Aguardar 24h">Aguardar 24h</button>
+            </div>
+            <div class="automation-canvas">
+              <h3>Fluxo atual</h3>
+              <div class="flow-nodes" id="flow-nodes">
+                <div class="flow-node">Gatilho: clique no e-mail</div>
+                <div class="flow-node">Condição: score &gt; 60</div>
+                <div class="flow-node">Ação: enviar WhatsApp</div>
+              </div>
+            </div>
+            <div class="automation-summary">
+              <h3>Resumo do fluxo</h3>
+              <ul>
+                <li>Ativo em 3 canais</li>
+                <li>Conversão média: 24%</li>
+                <li>Tempo médio até fechamento: 2 dias</li>
+              </ul>
+              <button class="ghost">Simular jornada</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="landing">
+          <div class="section-header">
+            <div>
+              <h2>Construtor de landing pages</h2>
+              <p>Templates prontos com formulários, pop-ups e botão WhatsApp.</p>
+            </div>
+            <button class="primary">Novo template</button>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <h3>Templates ativos</h3>
+              <div class="template-list">
+                <button class="template active">Webinar • Conversão 38%</button>
+                <button class="template">Checklist • Conversão 22%</button>
+                <button class="template">Catálogo WhatsApp • Conversão 31%</button>
+              </div>
+              <button class="ghost">Personalizar</button>
+            </div>
+            <div class="card">
+              <h3>Preview da landing</h3>
+              <div class="landing-preview">
+                <h4>Webinar: Venda pelo WhatsApp</h4>
+                <p>Receba o link de acesso e fale com um especialista agora.</p>
+                <button class="primary">Quero participar</button>
+              </div>
+              <small>CTA com rastreamento automático e opt-in.</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="segmentation">
+          <div class="section-header">
+            <div>
+              <h2>Segmentação avançada</h2>
+              <p>Crie segmentos por perfil, comportamento e engajamento.</p>
+            </div>
+            <button class="primary">Novo segmento</button>
+          </div>
+          <div class="grid-three">
+            <div class="card">
+              <h3>Segmentos dinâmicos</h3>
+              <ul class="checklist">
+                <li>Gestores com +5 atendentes</li>
+                <li>Leads que abriram 3 campanhas</li>
+                <li>Clientes com NPS &gt; 8</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Lead scoring</h3>
+              <p>Pontuação automática por engajamento.</p>
+              <div class="score">82</div>
+              <small>Prioridade alta</small>
+            </div>
+            <div class="card">
+              <h3>Regras de pontuação</h3>
+              <ul>
+                <li>+10 visita página de preços</li>
+                <li>+8 resposta no WhatsApp</li>
+                <li>-5 7 dias inativo</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="bots">
+          <div class="section-header">
+            <div>
+              <h2>Chatbots e assistentes de IA</h2>
+              <p>Crie bots com handoff humano e treinamento com documentos.</p>
+            </div>
+            <button class="primary">Criar bot</button>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <h3>Fluxo bot atendimento</h3>
+              <ul>
+                <li>Boas-vindas + coleta de dados</li>
+                <li>Consulta ao FAQ interno</li>
+                <li>Transferência para humano</li>
+              </ul>
+              <button class="ghost">Editar fluxo</button>
+            </div>
+            <div class="card">
+              <h3>Treinamento IA</h3>
+              <p>Documentos enviados: 12 arquivos</p>
+              <button class="ghost">Adicionar documentos</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="campaigns">
+          <div class="section-header">
+            <div>
+              <h2>Disparo em massa e remarketing</h2>
+              <p>Envios segmentados com follow-ups automatizados.</p>
+            </div>
+            <button class="primary">Nova campanha</button>
+          </div>
+          <div class="grid-three">
+            <div class="card">
+              <h3>Campanha WhatsApp</h3>
+              <p>Template aprovado • 4.200 contatos</p>
+              <button class="ghost">Agendar</button>
+            </div>
+            <div class="card">
+              <h3>Remarketing automático</h3>
+              <p>Reativa leads inativos em 7 dias</p>
+              <button class="ghost">Ver regras</button>
+            </div>
+            <div class="card">
+              <h3>Follow-up e-mail</h3>
+              <p>Sequência de 3 toques</p>
+              <button class="ghost">Editar sequência</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="reports">
+          <div class="section-header">
+            <div>
+              <h2>Relatórios e BI unificados</h2>
+              <p>Indicadores operacionais e de campanhas em um só lugar.</p>
+            </div>
+            <button class="ghost">Exportar</button>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <h3>Dashboard de vendas</h3>
+              <div class="metrics">
+                <div class="metric">
+                  <span>Receita</span>
+                  <strong>R$ 320k</strong>
+                  <small>+18%</small>
+                </div>
+                <div class="metric">
+                  <span>Produtividade</span>
+                  <strong>32 atendimentos/dia</strong>
+                  <small>Equipe Atendimento 2</small>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Performance por canal</h3>
+              <ul>
+                <li>WhatsApp: 58% conversão</li>
+                <li>Instagram: 31% conversão</li>
+                <li>E-mail: 21% conversão</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="compliance">
+          <div class="section-header">
+            <div>
+              <h2>LGPD, consentimento e segurança</h2>
+              <p>Gerencie opt-in, auditoria e privacidade por equipe.</p>
+            </div>
+            <button class="primary">Registrar consentimento</button>
+          </div>
+          <div class="grid-three">
+            <div class="card">
+              <h3>Duplo opt-in</h3>
+              <p>Registro de consentimento com prova de origem.</p>
+            </div>
+            <div class="card">
+              <h3>Controle de dados</h3>
+              <p>Anonimização e exclusão sob demanda.</p>
+            </div>
+            <div class="card">
+              <h3>Disponibilidade</h3>
+              <p>99,9% uptime e monitoramento 24/7.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="settings">
+          <div class="section-header">
+            <div>
+              <h2>Configurações & integrações</h2>
+              <p>Usuários ilimitados, departamentos e API pública.</p>
+            </div>
+            <button class="primary">Criar usuário</button>
+          </div>
+          <div class="grid-two">
+            <div class="card">
+              <h3>Times e departamentos</h3>
+              <ul>
+                <li>Comercial Brasil (24 usuários)</li>
+                <li>Suporte Premium (8 usuários)</li>
+                <li>Marketing Growth (12 usuários)</li>
+              </ul>
+              <button class="ghost">Gerenciar equipes</button>
+            </div>
+            <div class="card">
+              <h3>Integrações ativas</h3>
+              <ul>
+                <li>API WhatsApp oficial</li>
+                <li>Meta Ads</li>
+                <li>ERP Financeiro</li>
+              </ul>
+              <button class="ghost">Conectar novo app</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "conecta-crm:kanban";
+      const navButtons = document.querySelectorAll(".nav-link");
+      const views = document.querySelectorAll(".view");
+      const cards = document.querySelectorAll(".kanban-card.draggable");
+      const columns = document.querySelectorAll(".kanban-column");
+      const resetButton = document.querySelector("#reset-kanban");
+      const paletteButtons = document.querySelectorAll(".automation-palette button");
+      const flowNodes = document.querySelector("#flow-nodes");
+      const saveFlow = document.querySelector("#save-flow");
+
+      const activateView = (viewId) => {
+        navButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.view === viewId);
+        });
+        views.forEach((view) => {
+          view.classList.toggle("active", view.dataset.view === viewId);
+        });
+      };
+
+      navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activateView(button.dataset.view);
+        });
+      });
+
+      const addDropIndicator = (column) => {
+        columns.forEach((col) => col.classList.remove("drop-target"));
+        if (column) {
+          column.classList.add("drop-target");
+        }
+      };
+
+      const buildLayout = () => {
+        const layout = {};
+        columns.forEach((column) => {
+          const columnId = column.dataset.column;
+          layout[columnId] = Array.from(column.querySelectorAll(".kanban-card.draggable")).map(
+            (card) => card.dataset.id
+          );
+        });
+        return layout;
+      };
+
+      const saveLayout = () => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(buildLayout()));
+      };
+
+      const applyLayout = (layout) => {
+        columns.forEach((column) => {
+          const columnId = column.dataset.column;
+          const order = layout[columnId];
+          if (!Array.isArray(order)) {
+            return;
+          }
+          order.forEach((cardId) => {
+            const card = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+            if (card) {
+              column.appendChild(card);
+            }
+          });
+        });
+      };
+
+      const initialLayout = buildLayout();
+
+      const restoreLayout = () => {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+          return;
+        }
+        try {
+          const layout = JSON.parse(raw);
+          applyLayout(layout);
+        } catch (error) {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      };
+
+      restoreLayout();
+
+      cards.forEach((card) => {
+        card.addEventListener("dragstart", (event) => {
+          card.classList.add("dragging");
+          event.dataTransfer.effectAllowed = "move";
+        });
+
+        card.addEventListener("dragend", () => {
+          card.classList.remove("dragging");
+          addDropIndicator(null);
+          saveLayout();
+        });
+      });
+
+      columns.forEach((column) => {
+        column.addEventListener("dragover", (event) => {
+          event.preventDefault();
+          addDropIndicator(column);
+        });
+
+        column.addEventListener("drop", (event) => {
+          event.preventDefault();
+          const dragging = document.querySelector(".kanban-card.dragging");
+          if (dragging) {
+            column.appendChild(dragging);
+          }
+          addDropIndicator(null);
+          saveLayout();
+        });
+      });
+
+      cards.forEach((card) => {
+        card.addEventListener("pointerdown", (event) => {
+          if (event.pointerType !== "touch" && event.pointerType !== "pen") {
+            return;
+          }
+
+          const startRect = card.getBoundingClientRect();
+          const startX = event.clientX;
+          const startY = event.clientY;
+          const offsetX = startRect.left - startX;
+          const offsetY = startRect.top - startY;
+          const originalColumn = card.closest(".kanban-column");
+          const placeholder = document.createElement("div");
+          placeholder.className = "kanban-card placeholder";
+          placeholder.style.height = `${startRect.height}px`;
+          originalColumn.insertBefore(placeholder, card);
+
+          card.classList.add("dragging", "dragging-touch");
+          card.style.width = `${startRect.width}px`;
+
+          const moveCard = (moveEvent) => {
+            card.style.transform = `translate(${moveEvent.clientX + offsetX}px, ${moveEvent.clientY + offsetY}px)`;
+            const target = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
+            const targetColumn = target ? target.closest(".kanban-column") : null;
+            addDropIndicator(targetColumn);
+          };
+
+          const endCard = (endEvent) => {
+            const target = document.elementFromPoint(endEvent.clientX, endEvent.clientY);
+            const targetColumn = target ? target.closest(".kanban-column") : null;
+            if (targetColumn) {
+              targetColumn.appendChild(card);
+            } else {
+              originalColumn.appendChild(card);
+            }
+            placeholder.remove();
+            card.classList.remove("dragging", "dragging-touch");
+            card.style.transform = "";
+            card.style.width = "";
+            addDropIndicator(null);
+            saveLayout();
+            window.removeEventListener("pointermove", moveCard);
+            window.removeEventListener("pointerup", endCard);
+          };
+
+          window.addEventListener("pointermove", moveCard);
+          window.addEventListener("pointerup", endCard, { once: true });
+        });
+      });
+
+      resetButton?.addEventListener("click", () => {
+        localStorage.removeItem(STORAGE_KEY);
+        applyLayout(initialLayout);
+      });
+
+      paletteButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const nodeText = button.dataset.node;
+          if (!nodeText || !flowNodes) {
+            return;
+          }
+          const node = document.createElement("div");
+          node.className = "flow-node";
+          node.textContent = nodeText;
+          flowNodes.appendChild(node);
+        });
+      });
+
+      saveFlow?.addEventListener("click", () => {
+        saveFlow.textContent = "Fluxo salvo!";
+        setTimeout(() => {
+          saveFlow.textContent = "Salvar fluxo";
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

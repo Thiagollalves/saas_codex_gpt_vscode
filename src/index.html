@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suite Concorrente - CRM/Marketing/WhatsApp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <h1>Suite CRM</h1>
+        <nav>
+          <button class="nav-button is-active" data-target="crm">CRM</button>
+          <button class="nav-button" data-target="marketing">Marketing</button>
+          <button class="nav-button" data-target="whatsapp">WhatsApp</button>
+          <button class="nav-button" data-target="settings">Settings</button>
+        </nav>
+        <div class="user-card">
+          <p>Usuário teste</p>
+          <strong>demo@empresa.com</strong>
+          <span class="status">Plano Business</span>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="page-header">
+          <div>
+            <h2 id="page-title">CRM</h2>
+            <p id="page-subtitle">Gerencie oportunidades com seu funil arrastável.</p>
+          </div>
+          <div class="quick-actions">
+            <button class="ghost">Sincronizar</button>
+            <button class="primary">Novo lead</button>
+          </div>
+        </header>
+
+        <section class="page is-visible" id="crm">
+          <div class="crm-summary">
+            <div class="summary-card">
+              <h3>Pipeline ativo</h3>
+              <p>38 negócios em andamento</p>
+            </div>
+            <div class="summary-card">
+              <h3>Receita prevista</h3>
+              <p>R$ 420.000,00</p>
+            </div>
+            <div class="summary-card">
+              <h3>Taxa de conversão</h3>
+              <p>24% no mês</p>
+            </div>
+          </div>
+
+          <div class="kanban" id="kanban">
+            <div class="kanban-column" data-stage="novos">
+              <div class="column-header">
+                <h4>Novos</h4>
+                <button class="add-card">+ Card</button>
+              </div>
+              <div class="card-list">
+                <article class="kanban-card" tabindex="0">
+                  <h5>Hotel Atlântico</h5>
+                  <p>R$ 35k • contato: Paula</p>
+                </article>
+                <article class="kanban-card" tabindex="0">
+                  <h5>Loja Mercado 24h</h5>
+                  <p>R$ 18k • contato: Marcos</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="kanban-column" data-stage="qualificacao">
+              <div class="column-header">
+                <h4>Qualificação</h4>
+                <button class="add-card">+ Card</button>
+              </div>
+              <div class="card-list">
+                <article class="kanban-card" tabindex="0">
+                  <h5>Grupo Fênix</h5>
+                  <p>R$ 62k • demo agendada</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="kanban-column" data-stage="proposta">
+              <div class="column-header">
+                <h4>Proposta</h4>
+                <button class="add-card">+ Card</button>
+              </div>
+              <div class="card-list">
+                <article class="kanban-card" tabindex="0">
+                  <h5>Clínica Horizonte</h5>
+                  <p>R$ 44k • contrato enviado</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="kanban-column" data-stage="fechado">
+              <div class="column-header">
+                <h4>Fechado</h4>
+                <button class="add-card">+ Card</button>
+              </div>
+              <div class="card-list">
+                <article class="kanban-card" tabindex="0">
+                  <h5>Startup Vitta</h5>
+                  <p>R$ 29k • onboarding</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <p class="helper">
+            Arraste um card livremente entre as etapas. Para editar um card, toque ou clique nele.
+          </p>
+        </section>
+
+        <section class="page" id="marketing">
+          <div class="marketing-grid">
+            <div class="marketing-card">
+              <h3>Campanhas 360°</h3>
+              <p>Crie jornadas com e-mail, SMS e push integrados ao CRM.</p>
+              <button class="primary">Nova campanha</button>
+            </div>
+            <div class="marketing-card">
+              <h3>Segmentação inteligente</h3>
+              <ul>
+                <li>Filtros por estágio do funil</li>
+                <li>Engajamento em tempo real</li>
+                <li>Tags automatizadas</li>
+              </ul>
+            </div>
+            <div class="marketing-card">
+              <h3>Calendário editorial</h3>
+              <p>Gerencie posts e aprovações no mesmo painel.</p>
+              <button class="ghost">Visualizar calendário</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="whatsapp">
+          <div class="whatsapp-layout">
+            <div class="whatsapp-panel">
+              <h3>Inbox WhatsApp</h3>
+              <p>Responda com macros e acompanhe SLA por atendente.</p>
+              <div class="conversation">
+                <span>Cliente: Quero uma demo hoje.</span>
+                <span class="agent">Atendente: Claro! 15h funciona?</span>
+              </div>
+              <button class="primary">Abrir inbox</button>
+            </div>
+            <div class="whatsapp-panel">
+              <h3>Automação</h3>
+              <p>Configure bots e fluxos de recuperação de leads.</p>
+              <form class="automation-form">
+                <label>
+                  Palavra-chave
+                  <input type="text" placeholder="ex: orçamento" />
+                </label>
+                <label>
+                  Resposta automática
+                  <textarea rows="3" placeholder="Olá! Vamos agendar uma conversa?"></textarea>
+                </label>
+                <button class="ghost" type="button">Salvar fluxo</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="settings">
+          <div class="settings-layout">
+            <div class="settings-card">
+              <h3>Área do usuário</h3>
+              <p>Use este login de teste para acessar o sistema.</p>
+              <div class="credentials">
+                <div>
+                  <span>Email</span>
+                  <strong>demo@empresa.com</strong>
+                </div>
+                <div>
+                  <span>Senha</span>
+                  <strong>crm1234</strong>
+                </div>
+              </div>
+              <form class="login-form">
+                <label>
+                  Email
+                  <input type="email" placeholder="demo@empresa.com" />
+                </label>
+                <label>
+                  Senha
+                  <input type="password" placeholder="crm1234" />
+                </label>
+                <button class="primary" type="button">Entrar</button>
+              </form>
+            </div>
+            <div class="settings-card">
+              <h3>Preferências</h3>
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span>Notificações em tempo real</span>
+              </label>
+              <label class="switch">
+                <input type="checkbox" />
+                <span>Modo silencioso</span>
+              </label>
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span>Alertas de pipeline</span>
+              </label>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

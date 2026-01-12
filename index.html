@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Codex - CRM & Growth</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">Kamba CRM</div>
+    <div class="top-actions">
+      <label class="search">
+        <span>Buscar</span>
+        <input id="global-search" type="search" placeholder="Procure leads, contas e campanhas" />
+      </label>
+      <button class="ghost">Notificações</button>
+      <button class="primary">Upgrade</button>
+    </div>
+    <nav class="top-nav">
+      <button class="tab-button is-active" data-target="crm">CRM</button>
+      <button class="tab-button" data-target="marketing">Marketing</button>
+      <button class="tab-button" data-target="whatsapp">WhatsApp</button>
+      <button class="tab-button" data-target="settings">Settings</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="crm" class="tab-panel is-active">
+      <div class="section-header">
+        <div>
+          <h1>CRM - Kamba</h1>
+          <p>Arraste os cards livremente entre as etapas. Funciona no desktop e no mobile.</p>
+        </div>
+        <div class="header-actions">
+          <button id="filter-owner" class="ghost">Meus leads</button>
+          <button id="add-card" class="primary">Novo Lead</button>
+        </div>
+      </div>
+
+      <div class="insights-grid">
+        <article>
+          <h3>Pipeline do mês</h3>
+          <p class="metric">R$ 420k</p>
+          <span class="trend up">+12% vs. mês anterior</span>
+        </article>
+        <article>
+          <h3>Conversão</h3>
+          <p class="metric">28%</p>
+          <span class="trend up">+4% na última semana</span>
+        </article>
+        <article>
+          <h3>Tempo médio</h3>
+          <p class="metric">9 dias</p>
+          <span class="trend down">-2 dias no ciclo</span>
+        </article>
+        <article>
+          <h3>Atividades hoje</h3>
+          <p class="metric">18</p>
+          <span class="trend">7 tarefas pendentes</span>
+        </article>
+      </div>
+
+      <div class="kanban" id="kanban">
+        <div class="kanban-column" data-stage="lead">
+          <h2>Lead</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <header>
+                <h3>Restaurante Dona Lúcia</h3>
+                <button class="ghost edit-card" type="button">Editar</button>
+              </header>
+              <p>Interesse em gestão de filas e reservas.</p>
+              <div class="card-footer">
+                <span class="tag">+55 11 90000-1000</span>
+                <span class="owner">Camila</span>
+              </div>
+            </article>
+            <article class="kanban-card" tabindex="0">
+              <header>
+                <h3>Clínica Nova Vida</h3>
+                <button class="ghost edit-card" type="button">Editar</button>
+              </header>
+              <p>Solicitou demo para agenda online.</p>
+              <div class="card-footer">
+                <span class="tag">MQL</span>
+                <span class="owner">Henrique</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="contato">
+          <h2>Contato</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <header>
+                <h3>Auto Center Brasil</h3>
+                <button class="ghost edit-card" type="button">Editar</button>
+              </header>
+              <p>Reunião marcada para quinta.</p>
+              <div class="card-footer">
+                <span class="tag">Reunião</span>
+                <span class="owner">Luana</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="proposta">
+          <h2>Proposta</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <header>
+                <h3>Grupo Pixel</h3>
+                <button class="ghost edit-card" type="button">Editar</button>
+              </header>
+              <p>Plano anual + integração API.</p>
+              <div class="card-footer">
+                <span class="tag">R$ 48k</span>
+                <span class="owner">Beatriz</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="fechado">
+          <h2>Fechado</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <header>
+                <h3>Maré Fitness</h3>
+                <button class="ghost edit-card" type="button">Editar</button>
+              </header>
+              <p>Onboarding iniciado em 15/08.</p>
+              <div class="card-footer">
+                <span class="tag">Ativo</span>
+                <span class="owner">Rafa</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Marketing</h1>
+          <p>Automação e performance para acelerar o funil.</p>
+        </div>
+        <button class="primary">Nova campanha</button>
+      </div>
+      <div class="marketing-dashboard">
+        <div class="kpi-grid">
+          <article>
+            <h3>Leads gerados</h3>
+            <p class="metric">1.248</p>
+            <span class="trend up">+18% esta semana</span>
+          </article>
+          <article>
+            <h3>Custo por lead</h3>
+            <p class="metric">R$ 14,90</p>
+            <span class="trend down">-6% no mês</span>
+          </article>
+          <article>
+            <h3>Taxa de abertura</h3>
+            <p class="metric">42%</p>
+            <span class="trend up">+5% com IA</span>
+          </article>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Campanhas Multicanal</h3>
+            <p>Configure sequências de e-mail, SMS e push com segmentação dinâmica.</p>
+          </article>
+          <article>
+            <h3>Lead Scoring Inteligente</h3>
+            <p>Priorize leads com base em comportamento, origem e engajamento.</p>
+          </article>
+          <article>
+            <h3>Landing Pages Rápidas</h3>
+            <p>Templates prontos com testes A/B e análises em tempo real.</p>
+          </article>
+          <article>
+            <h3>Calendário de Conteúdo</h3>
+            <p>Planeje posts, aprove aprovações e acompanhe performance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="whatsapp" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>WhatsApp</h1>
+          <p>Central de mensagens com histórico e automações.</p>
+        </div>
+        <button class="primary">Nova automação</button>
+      </div>
+      <div class="whatsapp-grid">
+        <div class="whatsapp-panel">
+          <h3>Atalhos rápidos</h3>
+          <ul>
+            <li>✅ Envio de orçamento com um toque.</li>
+            <li>✅ Templates de follow-up.</li>
+            <li>✅ Etiquetas por etapa do funil.</li>
+          </ul>
+          <button class="secondary">Abrir biblioteca</button>
+        </div>
+        <div class="whatsapp-panel">
+          <h3>Inbox Unificada</h3>
+          <div class="chat-card">
+            <strong>Cliente: TechLab</strong>
+            <p>"Quero fechar o pacote premium ainda hoje."</p>
+            <div class="chat-actions">
+              <button class="primary">Responder agora</button>
+              <button class="ghost">Atribuir</button>
+            </div>
+          </div>
+          <div class="chat-card">
+            <strong>Cliente: Café Aurora</strong>
+            <p>"Pode me enviar o contrato?"</p>
+            <div class="chat-actions">
+              <button class="primary">Responder</button>
+              <button class="ghost">Adicionar nota</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Settings</h1>
+          <p>Área de usuário com login para teste.</p>
+        </div>
+        <button class="ghost">Central de ajuda</button>
+      </div>
+      <div class="settings-grid">
+        <form id="login-form" class="settings-card">
+          <h3>Login de teste</h3>
+          <label>
+            Usuário
+            <input type="text" name="username" placeholder="teste" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="1234" required />
+          </label>
+          <button class="primary" type="submit">Entrar</button>
+          <p class="hint">Use usuário <strong>teste</strong> e senha <strong>1234</strong>.</p>
+          <p id="login-error" class="error" aria-live="polite"></p>
+        </form>
+        <div id="user-area" class="settings-card is-hidden">
+          <h3>Área do usuário</h3>
+          <label>
+            Nome
+            <input type="text" value="Camila Santos" />
+          </label>
+          <label>
+            E-mail
+            <input type="email" value="camila@kamba.com" />
+          </label>
+          <label>
+            Time
+            <select>
+              <option>Comercial</option>
+              <option>Marketing</option>
+              <option>CS</option>
+            </select>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" checked />
+            <span>Ativar autenticação em dois fatores</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" checked />
+            <span>Receber alertas de performance</span>
+          </label>
+          <button class="secondary" type="button">Salvar alterações</button>
+          <button id="logout" class="ghost" type="button">Sair</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="edit-modal" class="modal is-hidden" aria-hidden="true">
+    <div class="modal-card">
+      <header>
+        <h3>Editar lead</h3>
+        <button id="close-modal" class="ghost" type="button">Fechar</button>
+      </header>
+      <label>
+        Nome
+        <input id="edit-title" type="text" />
+      </label>
+      <label>
+        Detalhes
+        <textarea id="edit-description" rows="3"></textarea>
+      </label>
+      <label>
+        Tag
+        <input id="edit-tag" type="text" />
+      </label>
+      <label>
+        Responsável
+        <input id="edit-owner" type="text" />
+      </label>
+      <button id="save-card" class="primary" type="button">Salvar</button>
+    </div>
+  </div>
+
+  <template id="card-template">
+    <article class="kanban-card" tabindex="0">
+      <header>
+        <h3>Novo Lead</h3>
+        <button class="ghost edit-card" type="button">Editar</button>
+      </header>
+      <p>Edite as informações do lead.</p>
+      <div class="card-footer">
+        <span class="tag">Novo</span>
+        <span class="owner">Equipe</span>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

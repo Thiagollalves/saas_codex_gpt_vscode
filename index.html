@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Codex - CRM & Growth</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">Kamba CRM</div>
+    <nav class="top-nav">
+      <button class="tab-button is-active" data-target="crm">CRM</button>
+      <button class="tab-button" data-target="marketing">Marketing</button>
+      <button class="tab-button" data-target="whatsapp">WhatsApp</button>
+      <button class="tab-button" data-target="settings">Settings</button>
+    </nav>
+    <div class="top-actions">
+      <label class="search">
+        <span>Pesquisar</span>
+        <input type="search" id="global-search" placeholder="Buscar conta ou lead" />
+      </label>
+      <button class="icon-button" aria-label="Notificações">
+        <span class="dot"></span>
+        🔔
+      </button>
+      <div class="user-pill">Camila Santos</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="crm" class="tab-panel is-active">
+      <div class="section-header">
+        <div>
+          <h1>CRM - Kamba</h1>
+          <p>Arraste os cards livremente entre as etapas. Funciona no desktop e no mobile.</p>
+        </div>
+        <button id="add-card" class="primary">Novo Lead</button>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-label">Leads ativos</span>
+          <strong>128</strong>
+          <small class="stat-trend up">+12% esta semana</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Taxa de conversão</span>
+          <strong>24%</strong>
+          <small class="stat-trend up">+3% no trimestre</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Receita em negociação</span>
+          <strong>R$ 320k</strong>
+          <small class="stat-trend down">-4% vs. mês anterior</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Tempo médio de ciclo</span>
+          <strong>18 dias</strong>
+          <small class="stat-trend up">-2 dias</small>
+        </article>
+      </div>
+
+      <div class="crm-toolbar">
+        <label>
+          Buscar lead
+          <input type="search" id="crm-search" placeholder="Digite nome, tag ou nota" />
+        </label>
+        <label>
+          Responsável
+          <select>
+            <option>Todos</option>
+            <option>Camila Santos</option>
+            <option>Equipe SDR</option>
+          </select>
+        </label>
+        <label>
+          Prioridade
+          <select>
+            <option>Todos</option>
+            <option>Alta</option>
+            <option>Média</option>
+            <option>Baixa</option>
+          </select>
+        </label>
+        <button class="secondary" type="button">Criar automação</button>
+      </div>
+
+      <div class="crm-layout">
+        <div class="kanban" id="kanban">
+          <div class="kanban-column" data-stage="lead">
+            <h2>Lead</h2>
+            <div class="kanban-list">
+              <article class="kanban-card" tabindex="0">
+                <h3>Restaurante Dona Lúcia</h3>
+                <p>Interesse em gestão de filas e reservas.</p>
+                <span class="tag">+55 11 90000-1000</span>
+              </article>
+              <article class="kanban-card" tabindex="0">
+                <h3>Clínica Nova Vida</h3>
+                <p>Solicitou demo para agenda online.</p>
+                <span class="tag">MQL</span>
+              </article>
+              <article class="kanban-card" tabindex="0">
+                <h3>Alpha Logistics</h3>
+                <p>Precisa de integração com ERP e BI.</p>
+                <span class="tag">Alta prioridade</span>
+              </article>
+            </div>
+          </div>
+          <div class="kanban-column" data-stage="contato">
+            <h2>Contato</h2>
+            <div class="kanban-list">
+              <article class="kanban-card" tabindex="0">
+                <h3>Auto Center Brasil</h3>
+                <p>Reunião marcada para quinta.</p>
+                <span class="tag">Reunião</span>
+              </article>
+              <article class="kanban-card" tabindex="0">
+                <h3>Grupo Horizonte</h3>
+                <p>Decisor solicitou proposta premium.</p>
+                <span class="tag">Proposta</span>
+              </article>
+            </div>
+          </div>
+          <div class="kanban-column" data-stage="proposta">
+            <h2>Proposta</h2>
+            <div class="kanban-list">
+              <article class="kanban-card" tabindex="0">
+                <h3>Grupo Pixel</h3>
+                <p>Plano anual + integração API.</p>
+                <span class="tag">R$ 48k</span>
+              </article>
+              <article class="kanban-card" tabindex="0">
+                <h3>Clínica Aurora</h3>
+                <p>Negociando contrato multiunidades.</p>
+                <span class="tag">R$ 96k</span>
+              </article>
+            </div>
+          </div>
+          <div class="kanban-column" data-stage="fechado">
+            <h2>Fechado</h2>
+            <div class="kanban-list">
+              <article class="kanban-card" tabindex="0">
+                <h3>Maré Fitness</h3>
+                <p>Onboarding iniciado em 15/08.</p>
+                <span class="tag">Ativo</span>
+              </article>
+              <article class="kanban-card" tabindex="0">
+                <h3>Studio 21</h3>
+                <p>Implantação concluída.</p>
+                <span class="tag">Sucesso</span>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <aside class="crm-insights">
+          <div class="insight-card">
+            <h3>Próximas tarefas</h3>
+            <ul>
+              <li>✅ Follow-up com Grupo Pixel (hoje)</li>
+              <li>🔔 Preparar proposta Alpha Logistics</li>
+              <li>📞 Call de diagnóstico com Clínica Aurora</li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Atividade recente</h3>
+            <div class="activity-item">
+              <strong>Camila</strong>
+              <span>Moveu “Clínica Nova Vida” para Contato.</span>
+              <small>há 2h</small>
+            </div>
+            <div class="activity-item">
+              <strong>Pedro</strong>
+              <span>Enviou proposta para Grupo Horizonte.</span>
+              <small>há 4h</small>
+            </div>
+            <div class="activity-item">
+              <strong>Renata</strong>
+              <span>Fechou contrato com Studio 21.</span>
+              <small>ontem</small>
+            </div>
+          </div>
+          <div class="insight-card">
+            <h3>Insights do funil</h3>
+            <p>74% dos leads avançam quando recebem demonstração em até 48h.</p>
+            <button class="ghost" type="button">Ver relatório completo</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="marketing" class="tab-panel">
+      <div class="section-header">
+        <h1>Marketing</h1>
+        <p>Automação e performance para acelerar o funil.</p>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <h3>Campanhas Multicanal</h3>
+          <p>Configure sequências de e-mail, SMS e push com segmentação dinâmica.</p>
+        </article>
+        <article>
+          <h3>Lead Scoring Inteligente</h3>
+          <p>Priorize leads com base em comportamento, origem e engajamento.</p>
+        </article>
+        <article>
+          <h3>Landing Pages Rápidas</h3>
+          <p>Templates prontos com testes A/B e análises em tempo real.</p>
+        </article>
+        <article>
+          <h3>Calendário de Conteúdo</h3>
+          <p>Planeje posts, aprove aprovações e acompanhe performance.</p>
+        </article>
+      </div>
+      <div class="marketing-metrics">
+        <article class="metric-card">
+          <h3>Performance desta semana</h3>
+          <div class="metric-row">
+            <span>Conversões</span>
+            <strong>312</strong>
+          </div>
+          <div class="metric-row">
+            <span>CPA médio</span>
+            <strong>R$ 24,90</strong>
+          </div>
+          <div class="metric-row">
+            <span>ROAS</span>
+            <strong>4.1x</strong>
+          </div>
+        </article>
+        <article class="metric-card">
+          <h3>Campanhas em destaque</h3>
+          <div class="campaign-row">
+            <div>
+              <strong>Demo Express</strong>
+              <p>Ads + WhatsApp</p>
+            </div>
+            <span class="badge success">+38%</span>
+          </div>
+          <div class="campaign-row">
+            <div>
+              <strong>Retarget B2B</strong>
+              <p>LinkedIn + Email</p>
+            </div>
+            <span class="badge warning">+12%</span>
+          </div>
+          <div class="campaign-row">
+            <div>
+              <strong>Onboarding Pro</strong>
+              <p>In-app + Push</p>
+            </div>
+            <span class="badge neutral">Estável</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="whatsapp" class="tab-panel">
+      <div class="section-header">
+        <h1>WhatsApp</h1>
+        <p>Central de mensagens com histórico e automações.</p>
+      </div>
+      <div class="whatsapp-grid">
+        <div class="whatsapp-panel">
+          <h3>Atalhos rápidos</h3>
+          <ul>
+            <li>✅ Envio de orçamento com um toque.</li>
+            <li>✅ Templates de follow-up.</li>
+            <li>✅ Etiquetas por etapa do funil.</li>
+          </ul>
+        </div>
+        <div class="whatsapp-panel">
+          <h3>Inbox Unificada</h3>
+          <div class="chat-card">
+            <strong>Cliente: TechLab</strong>
+            <p>"Quero fechar o pacote premium ainda hoje."</p>
+            <button class="primary">Responder agora</button>
+          </div>
+        </div>
+        <div class="whatsapp-panel">
+          <h3>Automação inteligente</h3>
+          <p>Respostas instantâneas com IA e gatilhos por estágio do funil.</p>
+          <div class="toggle-row">
+            <span>Assistente IA</span>
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span>Alerta de SLA</span>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings" class="tab-panel">
+      <div class="section-header">
+        <h1>Settings</h1>
+        <p>Área de usuário com login para teste.</p>
+      </div>
+      <div class="settings-grid">
+        <form id="login-form" class="settings-card">
+          <h3>Login de teste</h3>
+          <label>
+            Usuário
+            <input type="text" name="username" placeholder="teste" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="1234" required />
+          </label>
+          <button class="primary" type="submit">Entrar</button>
+          <p class="hint">Use usuário <strong>teste</strong> e senha <strong>1234</strong>.</p>
+          <p id="login-error" class="error" aria-live="polite"></p>
+        </form>
+        <div id="user-area" class="settings-card is-hidden">
+          <h3>Área do usuário</h3>
+          <label>
+            Nome
+            <input type="text" value="Camila Santos" />
+          </label>
+          <label>
+            E-mail
+            <input type="email" value="camila@kamba.com" />
+          </label>
+          <label>
+            Time
+            <select>
+              <option>Comercial</option>
+              <option>Marketing</option>
+              <option>CS</option>
+            </select>
+          </label>
+          <div class="toggle-row">
+            <span>Autenticação em duas etapas</span>
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span>Alertas por e-mail</span>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <button class="secondary" type="button">Salvar alterações</button>
+          <button id="logout" class="ghost" type="button">Sair</button>
+        </div>
+        <div class="settings-card">
+          <h3>Checklist de onboarding</h3>
+          <ul class="checklist">
+            <li>✅ Conectar WhatsApp Business</li>
+            <li>✅ Importar leads do CRM antigo</li>
+            <li>⬜ Configurar metas do time</li>
+            <li>⬜ Treinar fluxo de automação</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="card-modal" class="modal is-hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <h3>Editar lead</h3>
+      <label>
+        Nome do lead
+        <input type="text" id="modal-title" />
+      </label>
+      <label>
+        Observações
+        <textarea id="modal-description" rows="3"></textarea>
+      </label>
+      <label>
+        Tag
+        <input type="text" id="modal-tag" />
+      </label>
+      <div class="modal-actions">
+        <button id="modal-save" class="primary" type="button">Salvar</button>
+        <button id="modal-cancel" class="ghost" type="button">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="card-template">
+    <article class="kanban-card" tabindex="0">
+      <h3>Novo Lead</h3>
+      <p>Edite as informações do lead.</p>
+      <span class="tag">Novo</span>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

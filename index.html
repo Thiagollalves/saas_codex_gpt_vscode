@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Codex - CRM & Growth</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">Kamba CRM</div>
+    <div class="top-search">
+      <input type="search" placeholder="Buscar leads, campanhas ou conversas..." aria-label="Buscar" />
+      <span class="search-hint">⌘K</span>
+    </div>
+    <nav class="top-nav">
+      <button class="tab-button is-active" data-target="crm">CRM</button>
+      <button class="tab-button" data-target="atendimentos">Atendimentos</button>
+      <button class="tab-button" data-target="operacao">Operação</button>
+      <button class="tab-button" data-target="marketing">Marketing</button>
+      <button class="tab-button" data-target="whatsapp">WhatsApp</button>
+      <button class="tab-button" data-target="settings">Settings</button>
+    </nav>
+    <div class="top-actions">
+      <button id="theme-toggle" class="ghost" type="button">Modo escuro</button>
+      <button class="ghost" type="button">Notificações</button>
+      <div class="avatar">CS</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="crm" class="tab-panel is-active">
+      <div class="section-header">
+        <div>
+          <h1>CRM - Kamba</h1>
+          <p>Arraste os cards livremente entre as etapas. Funciona no desktop e no mobile.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button">Filtrar</button>
+          <button class="ghost" type="button">Exportar</button>
+          <button id="add-card" class="primary">Novo Lead</button>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <p>Leads ativos</p>
+          <h3>128</h3>
+          <span class="trend up">▲ 12% semana</span>
+        </article>
+        <article class="metric-card">
+          <p>Taxa de conversão</p>
+          <h3>24,3%</h3>
+          <span class="trend up">▲ 2,1% mês</span>
+        </article>
+        <article class="metric-card">
+          <p>Tempo médio</p>
+          <h3>6 dias</h3>
+          <span class="trend down">▼ 1,4 dia</span>
+        </article>
+        <article class="metric-card">
+          <p>Receita prevista</p>
+          <h3>R$ 212k</h3>
+          <span class="trend up">▲ 18% trimestre</span>
+        </article>
+      </div>
+      <div class="pipeline-summary">
+        <div>
+          <h3>Pipeline do mês</h3>
+          <p>R$ 480k em oportunidades qualificadas.</p>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 62%"></div>
+        </div>
+        <span class="progress-label">62% da meta alcançada</span>
+      </div>
+      <div class="kanban" id="kanban">
+        <div class="kanban-column" data-stage="lead">
+          <h2>Lead</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <h3>Restaurante Dona Lúcia</h3>
+              <p>Interesse em gestão de filas e reservas.</p>
+              <span class="tag">+55 11 90000-1000</span>
+            </article>
+            <article class="kanban-card" tabindex="0">
+              <h3>Clínica Nova Vida</h3>
+              <p>Solicitou demo para agenda online.</p>
+              <span class="tag">MQL</span>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="contato">
+          <h2>Contato</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <h3>Auto Center Brasil</h3>
+              <p>Reunião marcada para quinta.</p>
+              <span class="tag">Reunião</span>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="proposta">
+          <h2>Proposta</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <h3>Grupo Pixel</h3>
+              <p>Plano anual + integração API.</p>
+              <span class="tag">R$ 48k</span>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="fechado">
+          <h2>Fechado</h2>
+          <div class="kanban-list">
+            <article class="kanban-card" tabindex="0">
+              <h3>Maré Fitness</h3>
+              <p>Onboarding iniciado em 15/08.</p>
+              <span class="tag">Ativo</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="atendimentos" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Atendimentos</h1>
+          <p>Sua operação de atendimento dentro do CRM com múltiplos agentes online.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button">Filtros</button>
+          <button class="primary" type="button">Novo atendimento</button>
+        </div>
+      </div>
+      <div class="support-layout">
+        <aside class="support-sidebar">
+          <div class="support-search">
+            <input type="search" placeholder="Buscar atendimento..." aria-label="Buscar atendimento" />
+          </div>
+          <div class="support-filters">
+            <button class="ghost is-active" type="button">Todos</button>
+            <button class="ghost" type="button">Em atendimento</button>
+            <button class="ghost" type="button">Fila</button>
+          </div>
+          <div class="support-list">
+            <button class="support-item is-active" type="button" data-thread="techlab">
+              <div>
+                <strong>TechLab</strong>
+                <p>Preciso do pacote premium hoje.</p>
+              </div>
+              <span class="pill success">WhatsApp</span>
+            </button>
+            <button class="support-item" type="button" data-thread="marina">
+              <div>
+                <strong>Marina Costa</strong>
+                <p>Integração com CRM está pronta?</p>
+              </div>
+              <span class="pill warning">Instagram</span>
+            </button>
+            <button class="support-item" type="button" data-thread="hotel">
+              <div>
+                <strong>Hotel Brisa</strong>
+                <p>Quero falar sobre upgrade.</p>
+              </div>
+              <span class="pill">Facebook</span>
+            </button>
+          </div>
+        </aside>
+        <div class="support-chat">
+          <div class="chat-header">
+            <div>
+              <h3 id="chat-title">TechLab</h3>
+              <p id="chat-channel">Canal: WhatsApp • SLA 5m</p>
+            </div>
+            <div class="header-actions">
+              <button class="ghost" type="button">Transferir</button>
+              <button class="ghost" type="button">Encerrar</button>
+            </div>
+          </div>
+          <div id="chat-messages" class="chat-messages">
+            <div class="message customer">
+              <p>Preciso do pacote premium ainda hoje.</p>
+              <span>10:02</span>
+            </div>
+            <div class="message agent">
+              <p>Claro! Posso enviar o link de pagamento agora.</p>
+              <span>10:03</span>
+            </div>
+          </div>
+          <form id="chat-form" class="chat-input">
+            <input type="text" name="message" placeholder="Digite sua resposta..." required />
+            <button class="primary" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="operacao" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Operação</h1>
+          <p>Visão geral da operação e distribuição de atendimentos.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button">Painel de agentes</button>
+          <button class="primary" type="button">Novo atendimento</button>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <p>Agentes online</p>
+          <h3>12</h3>
+          <span class="trend up">▲ 2 ativos agora</span>
+        </article>
+        <article class="metric-card">
+          <p>Fila aberta</p>
+          <h3>18</h3>
+          <span class="trend down">▼ 4 desde ontem</span>
+        </article>
+        <article class="metric-card">
+          <p>Tempo médio de espera</p>
+          <h3>2m 10s</h3>
+          <span class="trend down">▼ 40s</span>
+        </article>
+        <article class="metric-card">
+          <p>Satisfação</p>
+          <h3>96%</h3>
+          <span class="trend up">▲ 1%</span>
+        </article>
+      </div>
+      <div class="agent-layout">
+        <div class="service-board">
+          <div class="service-header">
+            <div>
+              <h3>Fila operacional</h3>
+              <p>Distribua atendimentos entre equipes e monitore SLAs.</p>
+            </div>
+            <div class="header-actions">
+              <button class="ghost" type="button">SLA</button>
+              <button class="ghost" type="button">Regras de distribuição</button>
+            </div>
+          </div>
+          <div class="service-columns">
+            <div class="service-column">
+              <h4>Fila de entrada</h4>
+              <div class="service-card">
+                <strong>Marina Costa</strong>
+                <p>Pedido: integração com CRM.</p>
+                <span class="tag">Pendente</span>
+              </div>
+              <div class="service-card">
+                <strong>Mercado Dias</strong>
+                <p>Solicitou segunda via.</p>
+                <span class="tag">Prioridade</span>
+              </div>
+            </div>
+            <div class="service-column">
+              <h4>Em atendimento</h4>
+              <div class="service-card">
+                <strong>AgroMais</strong>
+                <p>Setup do catálogo concluído.</p>
+                <span class="tag">Em andamento</span>
+              </div>
+              <div class="service-card">
+                <strong>Hotel Brisa</strong>
+                <p>Negociação de plano anual.</p>
+                <span class="tag">Comercial</span>
+              </div>
+            </div>
+            <div class="service-column">
+              <h4>Finalizados</h4>
+              <div class="service-card">
+                <strong>Studio Luna</strong>
+                <p>Ticket resolvido às 14:05.</p>
+                <span class="tag">Resolvido</span>
+              </div>
+              <div class="service-card">
+                <strong>Padaria Central</strong>
+                <p>Orientações de pagamento.</p>
+                <span class="tag">Resolvido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="agent-panel">
+          <h3>Agentes em tempo real</h3>
+          <div class="agent-card">
+            <div>
+              <strong>Camila Santos</strong>
+              <p>Equipe Comercial • 4 chats ativos</p>
+            </div>
+            <span class="status-badge online">Online</span>
+          </div>
+          <div class="agent-card">
+            <div>
+              <strong>Felipe Rocha</strong>
+              <p>Equipe Suporte • 2 chats ativos</p>
+            </div>
+            <span class="status-badge online">Online</span>
+          </div>
+          <div class="agent-card">
+            <div>
+              <strong>Larissa Prado</strong>
+              <p>Equipe CS • Pausa rápida</p>
+            </div>
+            <span class="status-badge busy">Pausa</span>
+          </div>
+          <button class="secondary" type="button">Gerenciar escalas</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing" class="tab-panel">
+      <div class="section-header">
+        <h1>Marketing</h1>
+        <p>Automação e performance para acelerar o funil.</p>
+      </div>
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <p>Leads gerados</p>
+          <h3>1.248</h3>
+          <span class="trend up">▲ 9% semana</span>
+        </article>
+        <article class="metric-card">
+          <p>CPA médio</p>
+          <h3>R$ 34</h3>
+          <span class="trend down">▼ 6%</span>
+        </article>
+        <article class="metric-card">
+          <p>ROI campanhas</p>
+          <h3>4,3x</h3>
+          <span class="trend up">▲ 0,4x</span>
+        </article>
+        <article class="metric-card">
+          <p>Taxa de abertura</p>
+          <h3>38%</h3>
+          <span class="trend up">▲ 3%</span>
+        </article>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <h3>Campanhas Multicanal</h3>
+          <p>Configure sequências de e-mail, SMS e push com segmentação dinâmica.</p>
+        </article>
+        <article>
+          <h3>Lead Scoring Inteligente</h3>
+          <p>Priorize leads com base em comportamento, origem e engajamento.</p>
+        </article>
+        <article>
+          <h3>Landing Pages Rápidas</h3>
+          <p>Templates prontos com testes A/B e análises em tempo real.</p>
+        </article>
+        <article>
+          <h3>Calendário de Conteúdo</h3>
+          <p>Planeje posts, aprove aprovações e acompanhe performance.</p>
+        </article>
+      </div>
+      <div class="table-card">
+        <h3>Campanhas ativas</h3>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Campanha</span>
+            <span>Status</span>
+            <span>Leads</span>
+            <span>Conversão</span>
+          </div>
+          <div class="table-row">
+            <span>Black Friday SaaS</span>
+            <span class="pill success">No ar</span>
+            <span>420</span>
+            <span>28%</span>
+          </div>
+          <div class="table-row">
+            <span>Webhook parceiros</span>
+            <span class="pill warning">Otimizar</span>
+            <span>192</span>
+            <span>17%</span>
+          </div>
+          <div class="table-row">
+            <span>Retenção Q3</span>
+            <span class="pill success">No ar</span>
+            <span>636</span>
+            <span>31%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="whatsapp" class="tab-panel">
+      <div class="section-header">
+        <h1>WhatsApp</h1>
+        <p>Integrações oficiais e canais conectados para atendimento omnichannel.</p>
+      </div>
+      <div class="status-grid">
+        <div class="status-card">
+          <h3>Tempo médio de resposta</h3>
+          <p>3m 24s</p>
+          <span class="trend down">▼ 1m</span>
+        </div>
+        <div class="status-card">
+          <h3>Conversas ativas</h3>
+          <p>32</p>
+          <span class="trend up">▲ 5%</span>
+        </div>
+        <div class="status-card">
+          <h3>Automação ativa</h3>
+          <p>8 fluxos</p>
+          <span class="trend up">▲ 2 novos</span>
+        </div>
+      </div>
+      <div class="whatsapp-grid">
+        <div class="whatsapp-panel">
+          <h3>Atalhos rápidos</h3>
+          <ul>
+            <li>✅ Envio de orçamento com um toque.</li>
+            <li>✅ Templates de follow-up.</li>
+            <li>✅ Etiquetas por etapa do funil.</li>
+          </ul>
+          <button class="secondary" type="button">Criar automação</button>
+        </div>
+        <div class="whatsapp-panel">
+          <h3>Inbox Unificada</h3>
+          <div class="chat-card">
+            <strong>Cliente: TechLab</strong>
+            <p>"Quero fechar o pacote premium ainda hoje."</p>
+            <button class="primary">Responder agora</button>
+          </div>
+        </div>
+      </div>
+      <div class="integration-layout">
+        <div class="integration-grid">
+          <article class="integration-card" data-channel="facebook">
+            <div class="integration-header">
+              <div>
+                <h3>Facebook Messenger</h3>
+                <p>Conecte páginas e centralize conversas.</p>
+              </div>
+              <span class="status-badge offline">Desconectado</span>
+            </div>
+            <button class="secondary integration-action" type="button">Conectar</button>
+            <button class="ghost integration-details" type="button">Ver detalhes</button>
+          </article>
+          <article class="integration-card" data-channel="instagram">
+            <div class="integration-header">
+              <div>
+                <h3>Instagram Direct</h3>
+                <p>Atenda mensagens e comentários com automações.</p>
+              </div>
+              <span class="status-badge offline">Desconectado</span>
+            </div>
+            <button class="secondary integration-action" type="button">Conectar</button>
+            <button class="ghost integration-details" type="button">Ver detalhes</button>
+          </article>
+          <article class="integration-card" data-channel="whatsapp">
+            <div class="integration-header">
+              <div>
+                <h3>WhatsApp QR Code</h3>
+                <p>Emparelhe rapidamente com o dispositivo oficial.</p>
+              </div>
+              <span class="status-badge offline">Desconectado</span>
+            </div>
+            <button class="secondary integration-action" type="button">Gerar QR</button>
+            <button class="ghost integration-details" type="button">Ver detalhes</button>
+          </article>
+        </div>
+        <div class="integration-panel">
+          <h3>Detalhes da integração</h3>
+          <p id="integration-details">Selecione uma integração para ver o status e próximos passos.</p>
+          <div id="qr-panel" class="qr-panel is-hidden">
+            <img id="qr-image" class="qr-code" alt="QR Code do WhatsApp" />
+            <p>Escaneie o QR Code no app oficial do WhatsApp Business.</p>
+            <span id="qr-token" class="hint"></span>
+            <button id="qr-refresh" class="ghost" type="button">Atualizar QR</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings" class="tab-panel">
+      <div class="section-header">
+        <h1>Settings</h1>
+        <p>Área de usuário com login para teste.</p>
+      </div>
+      <div class="settings-grid">
+        <form id="login-form" class="settings-card">
+          <h3>Login de teste</h3>
+          <label>
+            Usuário
+            <input type="text" name="username" placeholder="teste" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="1234" required />
+          </label>
+          <button class="primary" type="submit">Entrar</button>
+          <p class="hint">Use usuário <strong>teste</strong> e senha <strong>1234</strong>.</p>
+          <p id="login-error" class="error" aria-live="polite"></p>
+        </form>
+        <div id="user-area" class="settings-card is-hidden">
+          <h3>Área do usuário</h3>
+          <label>
+            Nome
+            <input type="text" value="Camila Santos" />
+          </label>
+          <label>
+            E-mail
+            <input type="email" value="camila@kamba.com" />
+          </label>
+          <label>
+            Time
+            <select>
+              <option>Comercial</option>
+              <option>Marketing</option>
+              <option>CS</option>
+            </select>
+          </label>
+          <button class="secondary" type="button">Salvar alterações</button>
+          <button id="logout" class="ghost" type="button">Sair</button>
+        </div>
+        <div class="settings-card">
+          <h3>Segurança</h3>
+          <div class="toggle-row">
+            <div>
+              <strong>Autenticação em dois fatores</strong>
+              <p>Proteja sua conta com verificação extra.</p>
+            </div>
+            <button class="toggle" data-toggle="off" type="button">Desativado</button>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <strong>Alertas por e-mail</strong>
+              <p>Receba notificações de logins e acessos.</p>
+            </div>
+            <button class="toggle is-on" data-toggle="on" type="button">Ativado</button>
+          </div>
+          <button class="ghost" type="button">Gerenciar API</button>
+        </div>
+        <div class="settings-card">
+          <h3>Preferências</h3>
+          <label>
+            Idioma
+            <select>
+              <option>Português (BR)</option>
+              <option>English (US)</option>
+            </select>
+          </label>
+          <label>
+            Fuso horário
+            <select>
+              <option>GMT-3 (Brasília)</option>
+              <option>GMT-5 (Bogotá)</option>
+            </select>
+          </label>
+          <button class="secondary" type="button">Atualizar preferências</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="card-template">
+    <article class="kanban-card" tabindex="0">
+      <h3>Novo Lead</h3>
+      <p>Edite as informações do lead.</p>
+      <span class="tag">Novo</span>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

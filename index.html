@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suite CRM & Marketing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand__logo">K</span>
+        <div>
+          <p class="brand__title">Kamba Suite</p>
+          <p class="brand__subtitle">CRM, Marketing e WhatsApp</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav__btn is-active" data-tab="crm">CRM</button>
+        <button class="nav__btn" data-tab="marketing">Marketing</button>
+        <button class="nav__btn" data-tab="whatsapp">WhatsApp</button>
+        <button class="nav__btn" data-tab="settings">Settings</button>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section class="tab is-active" id="crm">
+        <div class="tab__header">
+          <div>
+            <h1>CRM / Kanban</h1>
+            <p>Arraste os cards entre as etapas para atualizar o funil.</p>
+          </div>
+          <div class="tab__actions">
+            <button class="btn">+ Novo Card</button>
+            <button class="btn btn--ghost">Relatórios</button>
+          </div>
+        </div>
+        <div class="kanban" id="kanban">
+          <div class="column" data-column="lead">
+            <div class="column__header">
+              <h2>Leads</h2>
+              <span class="badge">5</span>
+            </div>
+            <div class="column__list">
+              <article class="kanban-card" data-id="c1">
+                <h3>Academia Vivo+</h3>
+                <p>Plano anual - alta prioridade</p>
+                <div class="card-meta">
+                  <span>R$ 18.000</span>
+                  <span>Prazo: 2 dias</span>
+                </div>
+              </article>
+              <article class="kanban-card" data-id="c2">
+                <h3>Startup Horizon</h3>
+                <p>Inbound via landing page</p>
+                <div class="card-meta">
+                  <span>R$ 6.400</span>
+                  <span>Prazo: 4 dias</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="column" data-column="qualificacao">
+            <div class="column__header">
+              <h2>Qualificação</h2>
+              <span class="badge">4</span>
+            </div>
+            <div class="column__list">
+              <article class="kanban-card" data-id="c3">
+                <h3>Clínica Orion</h3>
+                <p>Contato com decisor</p>
+                <div class="card-meta">
+                  <span>R$ 12.300</span>
+                  <span>Prazo: 1 semana</span>
+                </div>
+              </article>
+              <article class="kanban-card" data-id="c4">
+                <h3>Restaurante Bossa</h3>
+                <p>Precisa de proposta</p>
+                <div class="card-meta">
+                  <span>R$ 4.200</span>
+                  <span>Prazo: 3 dias</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="column" data-column="proposta">
+            <div class="column__header">
+              <h2>Proposta</h2>
+              <span class="badge">3</span>
+            </div>
+            <div class="column__list">
+              <article class="kanban-card" data-id="c5">
+                <h3>Grupo Solar</h3>
+                <p>Revisar contrato</p>
+                <div class="card-meta">
+                  <span>R$ 25.000</span>
+                  <span>Prazo: hoje</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="column" data-column="fechado">
+            <div class="column__header">
+              <h2>Fechado</h2>
+              <span class="badge">2</span>
+            </div>
+            <div class="column__list">
+              <article class="kanban-card" data-id="c6">
+                <h3>Hotel Vértice</h3>
+                <p>Assinado e em onboarding</p>
+                <div class="card-meta">
+                  <span>R$ 31.000</span>
+                  <span>Prazo: 2 semanas</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab" id="marketing">
+        <div class="tab__header">
+          <div>
+            <h1>Marketing</h1>
+            <p>Campanhas, jornadas e métricas em tempo real.</p>
+          </div>
+          <div class="tab__actions">
+            <button class="btn">Nova Campanha</button>
+            <button class="btn btn--ghost">Importar Leads</button>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="panel">
+            <h3>Campanhas Ativas</h3>
+            <ul>
+              <li>Nutrição B2B - 68% de abertura</li>
+              <li>Webinar Vendas - 1.240 inscritos</li>
+              <li>Promoção Outono - ROI 4.2x</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Automação</h3>
+            <p>Gatilhos configurados para lead scoring e reengajamento.</p>
+            <button class="btn btn--ghost">Editar fluxos</button>
+          </div>
+          <div class="panel">
+            <h3>Analytics</h3>
+            <p>Conversão semanal: <strong>12,5%</strong></p>
+            <p>Custo por lead: <strong>R$ 24,90</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab" id="whatsapp">
+        <div class="tab__header">
+          <div>
+            <h1>WhatsApp</h1>
+            <p>Central de atendimento com filas inteligentes e respostas rápidas.</p>
+          </div>
+          <div class="tab__actions">
+            <button class="btn">Novo Atendimento</button>
+          </div>
+        </div>
+        <div class="grid grid--two">
+          <div class="panel">
+            <h3>Fila de Atendimento</h3>
+            <ul>
+              <li>João • aguardando há 3 min</li>
+              <li>Mariana • aguardando há 7 min</li>
+              <li>Lucas • aguardando há 11 min</li>
+            </ul>
+            <button class="btn btn--ghost">Priorizar fila</button>
+          </div>
+          <div class="panel">
+            <h3>Respostas rápidas</h3>
+            <p>Templates prontos com variáveis dinâmicas.</p>
+            <button class="btn">Gerenciar templates</button>
+          </div>
+          <div class="panel">
+            <h3>WhatsApp Business</h3>
+            <p>Integração ativa • número verificado.</p>
+            <button class="btn btn--ghost">Ver logs</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab" id="settings">
+        <div class="tab__header">
+          <div>
+            <h1>Settings</h1>
+            <p>Área de usuário com login e senha para teste.</p>
+          </div>
+        </div>
+        <div class="grid grid--two">
+          <div class="panel">
+            <h3>Login de teste</h3>
+            <p class="muted">Use as credenciais abaixo para validar o fluxo.</p>
+            <div class="credentials">
+              <div>
+                <span>Email</span>
+                <strong>teste@kamba.com</strong>
+              </div>
+              <div>
+                <span>Senha</span>
+                <strong>123456</strong>
+              </div>
+            </div>
+            <form class="login-form" id="loginForm">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="teste@kamba.com" required />
+              </label>
+              <label>
+                Senha
+                <input type="password" name="password" placeholder="123456" required />
+              </label>
+              <button class="btn" type="submit">Entrar</button>
+              <p class="login-message" id="loginMessage" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="panel">
+            <h3>Preferências do usuário</h3>
+            <ul>
+              <li>Notificações: Ativadas</li>
+              <li>Fuso horário: América/São Paulo</li>
+              <li>Idioma: Português (BR)</li>
+            </ul>
+            <button class="btn btn--ghost">Editar preferências</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

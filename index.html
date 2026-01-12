@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamba CRM</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">K</span>
+      <div>
+        <h1>Kamba Suite</h1>
+        <p>CRM + Marketing + WhatsApp</p>
+      </div>
+    </div>
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab active" data-tab="crm">CRM</button>
+      <button class="tab" data-tab="marketing">Marketing</button>
+      <button class="tab" data-tab="whatsapp">WhatsApp</button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="crm" class="tab-panel active" aria-labelledby="crm">
+      <div class="panel-header">
+        <div>
+          <h2>Pipeline de Vendas</h2>
+          <p>Arraste os cards entre etapas (drag & drop compatível com mobile).</p>
+        </div>
+        <div class="controls">
+          <button class="primary" id="add-card">Novo lead</button>
+          <button class="ghost" id="reset-board">Resetar pipeline</button>
+        </div>
+      </div>
+
+      <div class="board" id="kanban-board">
+        <div class="column" data-stage="novos">
+          <header>
+            <h3>Novos</h3>
+            <span class="count" data-count="novos">0</span>
+          </header>
+          <div class="column-body" data-column="novos"></div>
+        </div>
+        <div class="column" data-stage="contato">
+          <header>
+            <h3>Contato feito</h3>
+            <span class="count" data-count="contato">0</span>
+          </header>
+          <div class="column-body" data-column="contato"></div>
+        </div>
+        <div class="column" data-stage="proposta">
+          <header>
+            <h3>Proposta</h3>
+            <span class="count" data-count="proposta">0</span>
+          </header>
+          <div class="column-body" data-column="proposta"></div>
+        </div>
+        <div class="column" data-stage="fechado">
+          <header>
+            <h3>Fechado</h3>
+            <span class="count" data-count="fechado">0</span>
+          </header>
+          <div class="column-body" data-column="fechado"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing" class="tab-panel" aria-labelledby="marketing">
+      <div class="panel-header">
+        <div>
+          <h2>Marketing</h2>
+          <p>Planejamento de campanhas e automações.</p>
+        </div>
+        <button class="primary">Criar campanha</button>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Campanhas Ativas</h3>
+          <p>3 campanhas rodando com segmentação por região.</p>
+          <div class="badge success">+12% leads</div>
+        </article>
+        <article class="card">
+          <h3>Automação de Email</h3>
+          <p>Sequências baseadas em estágio do CRM.</p>
+          <button class="ghost">Editar fluxos</button>
+        </article>
+        <article class="card">
+          <h3>Landing Pages</h3>
+          <p>2 páginas publicadas e integradas ao WhatsApp.</p>
+          <button class="ghost">Ver páginas</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="whatsapp" class="tab-panel" aria-labelledby="whatsapp">
+      <div class="panel-header">
+        <div>
+          <h2>WhatsApp</h2>
+          <p>Centralize conversas e dispare mensagens.</p>
+        </div>
+        <button class="primary">Nova mensagem</button>
+      </div>
+      <div class="whatsapp-layout">
+        <aside class="chat-list">
+          <div class="chat-item active">
+            <h4>Juliana Lopes</h4>
+            <span>Preciso de proposta...</span>
+          </div>
+          <div class="chat-item">
+            <h4>Rafael Gomes</h4>
+            <span>Podemos marcar demo?</span>
+          </div>
+          <div class="chat-item">
+            <h4>Grupo Parcerias</h4>
+            <span>Envie o catálogo</span>
+          </div>
+        </aside>
+        <section class="chat-window">
+          <header>
+            <h3>Juliana Lopes</h3>
+            <span>Em atendimento</span>
+          </header>
+          <div class="chat-messages">
+            <div class="message incoming">Olá! Quero saber valores.</div>
+            <div class="message outgoing">Oi Juliana! Vou te enviar a proposta.</div>
+            <div class="message incoming">Obrigada 🙂</div>
+          </div>
+          <footer>
+            <input type="text" placeholder="Digite sua mensagem" />
+            <button class="primary">Enviar</button>
+          </footer>
+        </section>
+      </div>
+    </section>
+
+    <section id="settings" class="tab-panel" aria-labelledby="settings">
+      <div class="panel-header">
+        <div>
+          <h2>Settings</h2>
+          <p>Área do usuário com login de teste.</p>
+        </div>
+      </div>
+      <div class="settings-layout">
+        <div class="card">
+          <h3>Login de Teste</h3>
+          <p>Use as credenciais abaixo para entrar e editar seus dados.</p>
+          <ul class="credentials">
+            <li><strong>Email:</strong> demo@kamba.com</li>
+            <li><strong>Senha:</strong> 123456</li>
+          </ul>
+          <form id="login-form">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="demo@kamba.com" required />
+            </label>
+            <label>
+              Senha
+              <input type="password" name="password" placeholder="123456" required />
+            </label>
+            <button class="primary" type="submit">Entrar</button>
+            <p class="form-feedback" id="login-feedback"></p>
+          </form>
+        </div>
+        <div class="card" id="user-area">
+          <h3>Perfil</h3>
+          <p class="muted">Faça login para editar seus dados.</p>
+          <form id="profile-form" class="disabled">
+            <label>
+              Nome completo
+              <input type="text" name="name" value="Juliana Souza" />
+            </label>
+            <label>
+              Cargo
+              <input type="text" name="role" value="Coordenadora Comercial" />
+            </label>
+            <label>
+              Time
+              <input type="text" name="team" value="Inside Sales" />
+            </label>
+            <button class="ghost" type="submit">Salvar alterações</button>
+            <p class="form-feedback" id="profile-feedback"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="card-template">
+    <article class="kanban-card" draggable="false">
+      <div class="card-header">
+        <h4></h4>
+        <span class="tag"></span>
+      </div>
+      <p class="card-body"></p>
+      <div class="card-footer">
+        <span class="owner"></span>
+        <span class="value"></span>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

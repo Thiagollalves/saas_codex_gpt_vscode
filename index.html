@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Codex - CRM & Growth</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">Kamba CRM</div>
+    <div class="top-search">
+      <input type="search" placeholder="Buscar leads, campanhas ou conversas..." aria-label="Buscar" />
+      <span class="search-hint">⌘K</span>
+    </div>
+    <nav class="top-nav">
+      <button class="tab-button is-active" data-target="crm">CRM</button>
+      <button class="tab-button" data-target="command-center">Command Center</button>
+      <button class="tab-button" data-target="configuracoes">Configurações</button>
+      <button class="tab-button" data-target="campanhas">Campanhas</button>
+      <button class="tab-button" data-target="funis">Funis</button>
+      <button class="tab-button" data-target="fluxos">Fluxos</button>
+      <button class="tab-button" data-target="conexoes">Conexões</button>
+      <button class="tab-button" data-target="contatos">Contatos</button>
+      <button class="tab-button" data-target="atendimentos">Atendimentos</button>
+      <button class="tab-button" data-target="omnichannel">Omnichannel</button>
+      <button class="tab-button" data-target="marketing">Marketing</button>
+      <button class="tab-button" data-target="whatsapp">WhatsApp</button>
+      <button class="tab-button" data-target="settings">Settings</button>
+    </nav>
+    <div class="top-actions">
+      <button id="theme-toggle" class="ghost" type="button">Modo escuro</button>
+      <button class="ghost" type="button" data-action="notifications">Notificações</button>
+      <div class="avatar" data-action="profile">CS</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="crm" class="tab-panel is-active">
+      <div class="section-header">
+        <div>
+          <h1>CRM - Kamba</h1>
+          <p>Arraste os cards livremente entre as etapas. Funciona no desktop e no mobile.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="filter-crm">Filtrar</button>
+          <button class="ghost" type="button" data-action="export-crm">Exportar</button>
+          <button id="add-card" class="primary">Novo Lead</button>
+        </div>
+      </div>
+      <div class="metrics-grid" data-dropzone="metrics">
+        <article class="metric-card" data-draggable="true">
+          <p>Leads ativos</p>
+          <h3>128</h3>
+          <span class="trend up">▲ 12% semana</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Taxa de conversão</p>
+          <h3>24,3%</h3>
+          <span class="trend up">▲ 2,1% mês</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Tempo médio</p>
+          <h3>6 dias</h3>
+          <span class="trend down">▼ 1,4 dia</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Receita prevista</p>
+          <h3>R$ 212k</h3>
+          <span class="trend up">▲ 18% trimestre</span>
+        </article>
+      </div>
+      <div class="pipeline-summary" data-draggable="true">
+        <div>
+          <h3>Pipeline do mês</h3>
+          <p>R$ 480k em oportunidades qualificadas.</p>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 62%"></div>
+        </div>
+        <span class="progress-label">62% da meta alcançada</span>
+      </div>
+      <div class="kanban" id="kanban">
+        <div class="kanban-column" data-stage="lead">
+          <h2>Lead</h2>
+          <div class="kanban-list" data-dropzone="kanban">
+            <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
+              <h3>Restaurante Dona Lúcia</h3>
+              <p>Interesse em gestão de filas e reservas.</p>
+              <span class="tag">+55 11 90000-1000</span>
+            </article>
+            <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
+              <h3>Clínica Nova Vida</h3>
+              <p>Solicitou demo para agenda online.</p>
+              <span class="tag">MQL</span>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="contato">
+          <h2>Contato</h2>
+          <div class="kanban-list" data-dropzone="kanban">
+            <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
+              <h3>Auto Center Brasil</h3>
+              <p>Reunião marcada para quinta.</p>
+              <span class="tag">Reunião</span>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="proposta">
+          <h2>Proposta</h2>
+          <div class="kanban-list" data-dropzone="kanban">
+            <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
+              <h3>Grupo Pixel</h3>
+              <p>Plano anual + integração API.</p>
+              <span class="tag">R$ 48k</span>
+            </article>
+          </div>
+        </div>
+        <div class="kanban-column" data-stage="fechado">
+          <h2>Fechado</h2>
+          <div class="kanban-list" data-dropzone="kanban">
+            <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
+              <h3>Maré Fitness</h3>
+              <p>Onboarding iniciado em 15/08.</p>
+              <span class="tag">Ativo</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="command-center" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Command Center</h1>
+          <p>Visão executiva com métricas e atividade recente.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="refresh-dashboard">Atualizar</button>
+          <button class="primary" type="button" data-action="export-dashboard">Exportar</button>
+        </div>
+      </div>
+      <div class="metrics-grid" data-dropzone="dashboard-metrics">
+        <article class="metric-card" data-draggable="true" data-search-item>
+          <p>Total Leads</p>
+          <h3>3.284</h3>
+          <span class="trend up">▲ 20% mês</span>
+        </article>
+        <article class="metric-card" data-draggable="true" data-search-item>
+          <p>Conversas ativas</p>
+          <h3>86</h3>
+          <span class="trend up">▲ 12%</span>
+        </article>
+        <article class="metric-card" data-draggable="true" data-search-item>
+          <p>Receita</p>
+          <h3>R$ 45,2k</h3>
+          <span class="trend up">▲ 9%</span>
+        </article>
+        <article class="metric-card" data-draggable="true" data-search-item>
+          <p>Conversão</p>
+          <h3>5,4%</h3>
+          <span class="trend up">▲ 2%</span>
+        </article>
+      </div>
+      <div class="dashboard-grid">
+        <div class="chart-card" data-draggable="true" data-search-item>
+          <h3>Overview (Mensagens enviadas)</h3>
+          <div class="bar-chart">
+            <span style="height: 20%"></span>
+            <span style="height: 45%"></span>
+            <span style="height: 32%"></span>
+            <span style="height: 58%"></span>
+            <span style="height: 80%"></span>
+            <span style="height: 24%"></span>
+            <span style="height: 10%"></span>
+          </div>
+        </div>
+        <div class="activity-card" data-draggable="true" data-search-item>
+          <h3>Recent Activity</h3>
+          <ul>
+            <li><strong>Lead #1234</strong> iniciou conversa no WhatsApp.</li>
+            <li><strong>Lead #1230</strong> comprou Plano Pro.</li>
+            <li><strong>Lead #1212</strong> agendou reunião.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="configuracoes" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Configurações</h1>
+          <p>Central de setups inspirada no menu de atendimento.</p>
+        </div>
+        <button class="ghost" type="button" data-action="collapse-config">Recolher tudo</button>
+      </div>
+      <div class="config-grid" data-dropzone="config">
+        <article class="config-card" data-draggable="true" data-action="open-plugin" data-search-item>
+          <h3>Plug-in</h3>
+          <p>Configurar os plug-ins.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="lead-status" data-search-item>
+          <h3>Status Lead</h3>
+          <p>Configurar status para leads.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="quick-messages" data-search-item>
+          <h3>Mensagens rápidas</h3>
+          <p>Templates e atalhos de atendimento.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="labels" data-search-item>
+          <h3>Etiquetas</h3>
+          <p>Organize tags e segmentações.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="closure-reasons" data-search-item>
+          <h3>Motivos de fechamento</h3>
+          <p>Padronize encerramentos.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="templates-sync" data-search-item>
+          <h3>Templates</h3>
+          <p>Sincronize templates do WhatsApp API.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="users-config" data-search-item>
+          <h3>Usuários</h3>
+          <p>Cadastros e permissões.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="departments" data-search-item>
+          <h3>Departamentos</h3>
+          <p>Organize equipes.</p>
+        </article>
+        <article class="config-card" data-draggable="true" data-action="custom-fields" data-search-item>
+          <h3>Campos customizados</h3>
+          <p>Personalize formulários.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="campanhas" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Campanhas</h1>
+          <p>Gerencie campanhas WhatsApp e WABA.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="refresh-campaigns">Atualizar</button>
+          <button class="secondary" type="button" data-action="new-campaign">Nova campanha WA</button>
+          <button class="primary" type="button" data-action="new-campaign-waba">Nova campanha WABA</button>
+        </div>
+      </div>
+      <div class="table-card" data-draggable="true">
+        <h3>Lista de campanhas</h3>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>#</span>
+            <span>Campanha</span>
+            <span>Status</span>
+            <span>Qtd. contatos</span>
+            <span>Recebidas</span>
+            <span>Actions</span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>266</span>
+            <span>Teste</span>
+            <span>Pendente</span>
+            <span>0</span>
+            <span>0</span>
+            <span>
+              <button class="ghost" type="button" data-action="campaign-edit">Editar</button>
+            </span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>264</span>
+            <span>Teste variável</span>
+            <span>Finalizada</span>
+            <span>1</span>
+            <span>1</span>
+            <span>
+              <button class="ghost" type="button" data-action="campaign-report">Relatório</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funis" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Funis</h1>
+          <p>Controle e automações por funil.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="funnels-refresh">Atualizar</button>
+          <button class="ghost" type="button" data-action="funnels-history">Histórico de envios</button>
+          <button class="primary" type="button" data-action="funnels-new">Novo funil</button>
+        </div>
+      </div>
+      <div class="funnels-grid" data-dropzone="funnels">
+        <article class="funnel-card" data-draggable="true" data-search-item>
+          <h3>01 - Aviso Central</h3>
+          <p>Departamento: Squad Alfa</p>
+          <div class="funnel-stats">
+            <span>40 leads</span>
+            <span>24 envios</span>
+          </div>
+          <div class="funnel-actions">
+            <button class="ghost" type="button" data-action="funnels-edit">Editar</button>
+            <button class="ghost" type="button" data-action="funnels-copy">Duplicar</button>
+          </div>
+        </article>
+        <article class="funnel-card" data-draggable="true" data-search-item>
+          <h3>02 - Cobrança Alfa</h3>
+          <p>Departamento: Squad Alfa</p>
+          <div class="funnel-stats">
+            <span>40 leads</span>
+            <span>57 envios</span>
+          </div>
+          <div class="funnel-actions">
+            <button class="ghost" type="button" data-action="funnels-edit">Editar</button>
+            <button class="ghost" type="button" data-action="funnels-copy">Duplicar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="fluxos" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Fluxos</h1>
+          <p>Fluxos de atendimento e chatbot.</p>
+        </div>
+        <button class="primary" type="button" data-action="flow-add">Adicionar</button>
+      </div>
+      <div class="table-card" data-draggable="true">
+        <h3>Lista de fluxos</h3>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Nome</span>
+            <span>Status</span>
+            <span>Fluxo de atendimento</span>
+            <span>Ações</span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Chatbot Agente IA</span>
+            <span>Ativo</span>
+            <span>Não</span>
+            <span>
+              <button class="ghost" type="button" data-action="flow-edit">Editar</button>
+              <button class="ghost" type="button" data-action="flow-clone">Duplicar</button>
+            </span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Fluxo Regressivo</span>
+            <span>Ativo</span>
+            <span>Sim</span>
+            <span>
+              <button class="ghost" type="button" data-action="flow-edit">Editar</button>
+              <button class="ghost" type="button" data-action="flow-clone">Duplicar</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conexoes" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Conexões</h1>
+          <p>Gerencie canais WhatsApp, Facebook e Instagram.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="toggle-inactive">Ocultar inativos</button>
+          <button class="secondary" type="button" data-action="notify-me">Notificar</button>
+          <button class="primary" type="button" data-action="add-connection">Adicionar conexão</button>
+        </div>
+      </div>
+      <div class="connections-grid" data-dropzone="connections">
+        <article class="connection-card" data-draggable="true" data-search-item>
+          <h3>Nome: JetSales 01</h3>
+          <p>WhatsApp v4 • Conexão estabelecida</p>
+          <div class="header-actions">
+            <button class="ghost" type="button" data-action="import-contacts">Importar contatos</button>
+            <button class="ghost" type="button" data-action="disconnect">Desconectar</button>
+          </div>
+        </article>
+        <article class="connection-card" data-draggable="true" data-search-item>
+          <h3>Nome: Linha 02</h3>
+          <p>WhatsApp v4 • Última atualização hoje</p>
+          <div class="header-actions">
+            <button class="ghost" type="button" data-action="import-contacts">Importar contatos</button>
+            <button class="ghost" type="button" data-action="disconnect">Desconectar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contatos" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Contatos</h1>
+          <p>Base completa com ações rápidas.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="contacts-add">Adicionar</button>
+          <button class="ghost" type="button" data-action="contacts-import">Importar</button>
+          <button class="ghost" type="button" data-action="contacts-delete">Apagar contatos</button>
+          <button class="ghost" type="button" data-action="contacts-export">Exportar</button>
+        </div>
+      </div>
+      <div class="table-card" data-draggable="true">
+        <h3>Lista de contatos</h3>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Nome</span>
+            <span>WhatsApp</span>
+            <span>Estado</span>
+            <span>Tags</span>
+            <span>Ações</span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Cliente 01</span>
+            <span>+55 11 95555-1111</span>
+            <span>SP</span>
+            <span>Premium</span>
+            <span>
+              <button class="ghost" type="button" data-action="contact-chat">Chat</button>
+              <button class="ghost" type="button" data-action="contact-edit">Editar</button>
+            </span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Cliente 02</span>
+            <span>+55 21 94444-2222</span>
+            <span>RJ</span>
+            <span>Lead</span>
+            <span>
+              <button class="ghost" type="button" data-action="contact-chat">Chat</button>
+              <button class="ghost" type="button" data-action="contact-edit">Editar</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="atendimentos" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Atendimentos</h1>
+          <p>Sua operação de atendimento dentro do CRM com múltiplos agentes online.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="agent-panel">Painel de agentes</button>
+          <button class="primary" type="button" data-action="new-support">Novo atendimento</button>
+        </div>
+      </div>
+      <div class="support-shell">
+        <aside class="support-list" data-dropzone="support-list">
+          <div class="support-search">
+            <input type="search" placeholder="Buscar conversas..." aria-label="Buscar conversas" />
+          </div>
+          <button
+            class="support-card is-active"
+            data-chat="techlab"
+            type="button"
+            data-draggable="true"
+            data-search-item
+          >
+            <strong>TechLab</strong>
+            <span>WhatsApp • Urgente</span>
+            <p>Preciso fechar hoje.</p>
+          </button>
+          <button
+            class="support-card"
+            data-chat="marina"
+            type="button"
+            data-draggable="true"
+            data-search-item
+          >
+            <strong>Marina Costa</strong>
+            <span>Instagram • Novo</span>
+            <p>Quero integrar o CRM.</p>
+          </button>
+          <button
+            class="support-card"
+            data-chat="padaria"
+            type="button"
+            data-draggable="true"
+            data-search-item
+          >
+            <strong>Padaria Central</strong>
+            <span>Facebook • Atendimento</span>
+            <p>Problema com boleto.</p>
+          </button>
+        </aside>
+        <section class="support-chat">
+          <header class="chat-header">
+            <div>
+              <h3 id="chat-title">TechLab</h3>
+              <span id="chat-channel">WhatsApp • Prioridade alta</span>
+            </div>
+            <div class="header-actions">
+              <button class="ghost" type="button" data-action="tag-chat">Etiquetas</button>
+              <button class="ghost" type="button" data-action="transfer-chat">Transferir</button>
+            </div>
+          </header>
+          <div id="chat-messages" class="chat-messages">
+            <div class="message incoming">
+              <p>Oi! Preciso fechar o pacote premium ainda hoje.</p>
+              <span>09:14</span>
+            </div>
+            <div class="message outgoing">
+              <p>Posso te ajudar com o checkout agora mesmo.</p>
+              <span>09:15</span>
+            </div>
+          </div>
+          <form id="chat-form" class="chat-input">
+            <input type="text" name="message" placeholder="Digite sua resposta..." required />
+            <button class="primary" type="submit">Enviar</button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section id="omnichannel" class="tab-panel">
+      <div class="section-header">
+        <div>
+          <h1>Atendimentos Omnichannel</h1>
+          <p>Fila unificada de todos os canais com equipes dedicadas.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" type="button" data-action="omni-dashboard">Painel geral</button>
+          <button class="primary" type="button" data-action="create-queue">Criar fila</button>
+        </div>
+      </div>
+      <div class="metrics-grid" data-dropzone="metrics">
+        <article class="metric-card" data-draggable="true">
+          <p>Agentes online</p>
+          <h3>12</h3>
+          <span class="trend up">▲ 2 ativos agora</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Fila aberta</p>
+          <h3>18</h3>
+          <span class="trend down">▼ 4 desde ontem</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Tempo médio de espera</p>
+          <h3>2m 10s</h3>
+          <span class="trend down">▼ 40s</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Satisfação</p>
+          <h3>96%</h3>
+          <span class="trend up">▲ 1%</span>
+        </article>
+      </div>
+      <div class="agent-layout">
+        <div class="service-board">
+          <div class="service-header">
+            <div>
+              <h3>Fila operacional</h3>
+              <p>Distribua atendimentos entre equipes e monitore SLAs.</p>
+            </div>
+            <div class="header-actions">
+              <button class="ghost" type="button" data-action="sla">SLA</button>
+              <button class="ghost" type="button" data-action="routing">Regras de distribuição</button>
+            </div>
+          </div>
+          <div class="service-columns" data-dropzone="services">
+            <div class="service-column">
+              <h4>Fila de entrada</h4>
+              <div class="service-card" data-draggable="true">
+                <strong>Marina Costa</strong>
+                <p>Pedido: integração com CRM.</p>
+                <span class="tag">Pendente</span>
+              </div>
+              <div class="service-card" data-draggable="true">
+                <strong>Mercado Dias</strong>
+                <p>Solicitou segunda via.</p>
+                <span class="tag">Prioridade</span>
+              </div>
+            </div>
+            <div class="service-column">
+              <h4>Em atendimento</h4>
+              <div class="service-card" data-draggable="true">
+                <strong>AgroMais</strong>
+                <p>Setup do catálogo concluído.</p>
+                <span class="tag">Em andamento</span>
+              </div>
+              <div class="service-card" data-draggable="true">
+                <strong>Hotel Brisa</strong>
+                <p>Negociação de plano anual.</p>
+                <span class="tag">Comercial</span>
+              </div>
+            </div>
+            <div class="service-column">
+              <h4>Finalizados</h4>
+              <div class="service-card" data-draggable="true">
+                <strong>Studio Luna</strong>
+                <p>Ticket resolvido às 14:05.</p>
+                <span class="tag">Resolvido</span>
+              </div>
+              <div class="service-card" data-draggable="true">
+                <strong>Padaria Central</strong>
+                <p>Orientações de pagamento.</p>
+                <span class="tag">Resolvido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="agent-panel">
+          <h3>Agentes em tempo real</h3>
+          <div class="agent-card" data-draggable="true">
+            <div>
+              <strong>Camila Santos</strong>
+              <p>Equipe Comercial • 4 chats ativos</p>
+            </div>
+            <span class="status-badge online">Online</span>
+          </div>
+          <div class="agent-card" data-draggable="true">
+            <div>
+              <strong>Felipe Rocha</strong>
+              <p>Equipe Suporte • 2 chats ativos</p>
+            </div>
+            <span class="status-badge online">Online</span>
+          </div>
+          <div class="agent-card" data-draggable="true">
+            <div>
+              <strong>Larissa Prado</strong>
+              <p>Equipe CS • Pausa rápida</p>
+            </div>
+            <span class="status-badge busy">Pausa</span>
+          </div>
+          <button class="secondary" type="button" data-action="manage-shifts">Gerenciar escalas</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing" class="tab-panel">
+      <div class="section-header">
+        <h1>Marketing</h1>
+        <p>Automação e performance para acelerar o funil.</p>
+      </div>
+      <div class="metrics-grid" data-dropzone="metrics">
+        <article class="metric-card" data-draggable="true">
+          <p>Leads gerados</p>
+          <h3>1.248</h3>
+          <span class="trend up">▲ 9% semana</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>CPA médio</p>
+          <h3>R$ 34</h3>
+          <span class="trend down">▼ 6%</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>ROI campanhas</p>
+          <h3>4,3x</h3>
+          <span class="trend up">▲ 0,4x</span>
+        </article>
+        <article class="metric-card" data-draggable="true">
+          <p>Taxa de abertura</p>
+          <h3>38%</h3>
+          <span class="trend up">▲ 3%</span>
+        </article>
+      </div>
+      <div class="feature-grid" data-dropzone="features">
+        <article data-draggable="true" data-search-item>
+          <h3>Campanhas Multicanal</h3>
+          <p>Configure sequências de e-mail, SMS e push com segmentação dinâmica.</p>
+        </article>
+        <article data-draggable="true" data-search-item>
+          <h3>Lead Scoring Inteligente</h3>
+          <p>Priorize leads com base em comportamento, origem e engajamento.</p>
+        </article>
+        <article data-draggable="true" data-search-item>
+          <h3>Landing Pages Rápidas</h3>
+          <p>Templates prontos com testes A/B e análises em tempo real.</p>
+        </article>
+        <article data-draggable="true" data-search-item>
+          <h3>Calendário de Conteúdo</h3>
+          <p>Planeje posts, aprove aprovações e acompanhe performance.</p>
+        </article>
+      </div>
+      <div class="table-card" data-draggable="true">
+        <h3>Campanhas ativas</h3>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Campanha</span>
+            <span>Status</span>
+            <span>Leads</span>
+            <span>Conversão</span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Black Friday SaaS</span>
+            <span class="pill success">No ar</span>
+            <span>420</span>
+            <span>28%</span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Webhook parceiros</span>
+            <span class="pill warning">Otimizar</span>
+            <span>192</span>
+            <span>17%</span>
+          </div>
+          <div class="table-row" data-draggable="true" data-search-item>
+            <span>Retenção Q3</span>
+            <span class="pill success">No ar</span>
+            <span>636</span>
+            <span>31%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="whatsapp" class="tab-panel">
+      <div class="section-header">
+        <h1>WhatsApp</h1>
+        <p>Integrações oficiais e canais conectados para atendimento omnichannel.</p>
+      </div>
+      <div class="status-grid" data-dropzone="status">
+        <div class="status-card" data-draggable="true">
+          <h3>Tempo médio de resposta</h3>
+          <p>3m 24s</p>
+          <span class="trend down">▼ 1m</span>
+        </div>
+        <div class="status-card" data-draggable="true">
+          <h3>Conversas ativas</h3>
+          <p>32</p>
+          <span class="trend up">▲ 5%</span>
+        </div>
+        <div class="status-card" data-draggable="true">
+          <h3>Automação ativa</h3>
+          <p>8 fluxos</p>
+          <span class="trend up">▲ 2 novos</span>
+        </div>
+      </div>
+      <div class="whatsapp-grid" data-dropzone="whatsapp-panels">
+        <div class="whatsapp-panel" data-draggable="true">
+          <h3>Atalhos rápidos</h3>
+          <ul>
+            <li>✅ Envio de orçamento com um toque.</li>
+            <li>✅ Templates de follow-up.</li>
+            <li>✅ Etiquetas por etapa do funil.</li>
+          </ul>
+          <button class="secondary" type="button" data-action="create-automation">Criar automação</button>
+        </div>
+        <div class="whatsapp-panel" data-draggable="true">
+          <h3>Inbox Unificada</h3>
+          <div class="chat-card">
+            <strong>Cliente: TechLab</strong>
+            <p>"Quero fechar o pacote premium ainda hoje."</p>
+            <button class="primary" type="button" data-action="reply-now">Responder agora</button>
+          </div>
+        </div>
+      </div>
+      <div class="integration-layout">
+        <div class="integration-grid" data-dropzone="integrations">
+          <article class="integration-card" data-channel="facebook" data-draggable="true" data-search-item>
+            <div class="integration-header">
+              <div>
+                <h3>Facebook Messenger</h3>
+                <p>Conecte páginas e centralize conversas.</p>
+              </div>
+              <span class="status-badge offline">Desconectado</span>
+            </div>
+            <button class="secondary integration-action" type="button">Conectar</button>
+            <button class="ghost integration-details" type="button">Ver detalhes</button>
+          </article>
+          <article class="integration-card" data-channel="instagram" data-draggable="true" data-search-item>
+            <div class="integration-header">
+              <div>
+                <h3>Instagram Direct</h3>
+                <p>Atenda mensagens e comentários com automações.</p>
+              </div>
+              <span class="status-badge offline">Desconectado</span>
+            </div>
+            <button class="secondary integration-action" type="button">Conectar</button>
+            <button class="ghost integration-details" type="button">Ver detalhes</button>
+          </article>
+          <article class="integration-card" data-channel="whatsapp" data-draggable="true" data-search-item>
+            <div class="integration-header">
+              <div>
+                <h3>WhatsApp QR Code</h3>
+                <p>Emparelhe rapidamente com o dispositivo oficial.</p>
+              </div>
+              <span class="status-badge offline">Desconectado</span>
+            </div>
+            <button class="secondary integration-action" type="button">Gerar QR</button>
+            <button class="ghost integration-details" type="button">Ver detalhes</button>
+          </article>
+        </div>
+        <div class="integration-panel" data-draggable="true">
+          <h3>Detalhes da integração</h3>
+          <p id="integration-details">Selecione uma integração para ver o status e próximos passos.</p>
+          <label class="qr-input">
+            Código de pareamento
+            <input id="qr-token" type="text" placeholder="Digite seu token de sessão" />
+          </label>
+          <div id="qr-panel" class="qr-panel is-hidden">
+            <img id="qr-image" alt="QR Code do WhatsApp" />
+            <p>Escaneie o QR Code no app oficial do WhatsApp Business.</p>
+            <button id="qr-refresh" class="ghost" type="button">Atualizar QR</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings" class="tab-panel">
+      <div class="section-header">
+        <h1>Settings</h1>
+        <p>Área de usuário com login para teste.</p>
+      </div>
+      <div class="settings-grid">
+        <form id="login-form" class="settings-card" data-draggable="true">
+          <h3>Login de teste</h3>
+          <label>
+            Usuário
+            <input type="text" name="username" placeholder="teste" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="1234" required />
+          </label>
+          <button class="primary" type="submit">Entrar</button>
+          <p class="hint">Use usuário <strong>teste</strong> e senha <strong>1234</strong>.</p>
+          <p id="login-error" class="error" aria-live="polite"></p>
+        </form>
+        <div id="user-area" class="settings-card is-hidden" data-draggable="true">
+          <h3>Área do usuário</h3>
+          <label>
+            Nome
+            <input type="text" value="Camila Santos" />
+          </label>
+          <label>
+            E-mail
+            <input type="email" value="camila@kamba.com" />
+          </label>
+          <label>
+            Time
+            <select>
+              <option>Comercial</option>
+              <option>Marketing</option>
+              <option>CS</option>
+            </select>
+          </label>
+          <button class="secondary" type="button" data-action="save-profile">Salvar alterações</button>
+          <button id="logout" class="ghost" type="button">Sair</button>
+        </div>
+        <div class="settings-card" data-draggable="true">
+          <h3>Segurança</h3>
+          <div class="toggle-row">
+            <div>
+              <strong>Autenticação em dois fatores</strong>
+              <p>Proteja sua conta com verificação extra.</p>
+            </div>
+            <button class="toggle" data-toggle="off" type="button">Desativado</button>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <strong>Alertas por e-mail</strong>
+              <p>Receba notificações de logins e acessos.</p>
+            </div>
+            <button class="toggle is-on" data-toggle="on" type="button">Ativado</button>
+          </div>
+          <button class="ghost" type="button" data-action="manage-api">Gerenciar API</button>
+        </div>
+        <div class="settings-card" data-draggable="true">
+          <h3>Preferências</h3>
+          <label>
+            Idioma
+            <select>
+              <option>Português (BR)</option>
+              <option>English (US)</option>
+            </select>
+          </label>
+          <label>
+            Fuso horário
+            <select>
+              <option>GMT-3 (Brasília)</option>
+              <option>GMT-5 (Bogotá)</option>
+            </select>
+          </label>
+          <button class="secondary" type="button" data-action="update-preferences">
+            Atualizar preferências
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="card-template">
+    <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
+      <h3>Novo Lead</h3>
+      <p>Edite as informações do lead.</p>
+      <span class="tag">Novo</span>
+    </article>
+  </template>
+
+  <div id="toast-container" class="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

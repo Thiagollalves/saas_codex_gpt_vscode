@@ -876,6 +876,140 @@ const actionHandlers = {
     });
     showToast("Configuracoes recolhidas.");
   },
+  "open-plugin": () => {
+    openDrawer({
+      title: "Plug-ins",
+      description: "Gerencie integracoes adicionais do CRM.",
+      fields: [
+        { name: "plugin", label: "Nome do plug-in", required: true },
+        { name: "url", label: "URL de instalacao", required: true },
+      ],
+      confirmText: "Salvar plug-in",
+      onSubmit: (values) => {
+        updateStoredArray("plugins", (list) => [...list, { ...values, at: toTimeStamp() }]);
+        showToast("Plug-in salvo.");
+      },
+    });
+  },
+  "lead-status": () => {
+    openDrawer({
+      title: "Status de lead",
+      fields: [
+        { name: "status", label: "Novo status", required: true },
+        { name: "color", label: "Cor", value: "Azul" },
+      ],
+      confirmText: "Adicionar status",
+      onSubmit: (values) => {
+        updateStoredArray("leadStatus", (list) => [...list, values]);
+        showToast("Status de lead atualizado.");
+      },
+    });
+  },
+  "quick-messages": () => {
+    openDrawer({
+      title: "Mensagens rapidas",
+      fields: [
+        { name: "shortcut", label: "Atalho", required: true },
+        { name: "message", label: "Mensagem", type: "textarea", required: true },
+      ],
+      confirmText: "Salvar mensagem",
+      onSubmit: (values) => {
+        updateStoredArray("quickMessages", (list) => [...list, values]);
+        showToast("Mensagem rapida salva.");
+      },
+    });
+  },
+  labels: () => {
+    openDrawer({
+      title: "Etiquetas",
+      fields: [
+        { name: "label", label: "Nome da etiqueta", required: true },
+        { name: "color", label: "Cor", value: "Verde" },
+      ],
+      confirmText: "Adicionar etiqueta",
+      onSubmit: (values) => {
+        updateStoredArray("labels", (list) => [...list, values]);
+        showToast("Etiqueta adicionada.");
+      },
+    });
+  },
+  "closure-reasons": () => {
+    openDrawer({
+      title: "Motivos de fechamento",
+      fields: [
+        { name: "reason", label: "Motivo", required: true },
+      ],
+      confirmText: "Salvar motivo",
+      onSubmit: (values) => {
+        updateStoredArray("closureReasons", (list) => [...list, values]);
+        showToast("Motivo registrado.");
+      },
+    });
+  },
+  "templates-sync": () => {
+    openDrawer({
+      title: "Templates WhatsApp",
+      fields: [
+        { type: "info", value: "Ultima sincronizacao: agora" },
+        { name: "namespace", label: "Namespace", value: "kamba" },
+      ],
+      confirmText: "Sincronizar",
+      onSubmit: (values) => {
+        updateStoredArray("templates", (list) => [...list, values]);
+        showToast("Templates sincronizados.");
+      },
+    });
+  },
+  "users-config": () => {
+    openDrawer({
+      title: "Usuarios",
+      fields: [
+        { name: "name", label: "Nome do usuario", required: true },
+        { name: "role", label: "Permissao", value: "Admin" },
+      ],
+      confirmText: "Adicionar usuario",
+      onSubmit: (values) => {
+        updateStoredArray("users", (list) => [...list, values]);
+        showToast("Usuario adicionado.");
+      },
+    });
+  },
+  departments: () => {
+    openDrawer({
+      title: "Departamentos",
+      fields: [
+        { name: "department", label: "Nome do departamento", required: true },
+      ],
+      confirmText: "Salvar departamento",
+      onSubmit: (values) => {
+        updateStoredArray("departments", (list) => [...list, values]);
+        showToast("Departamento criado.");
+      },
+    });
+  },
+  "custom-fields": () => {
+    openDrawer({
+      title: "Campos customizados",
+      fields: [
+        { name: "field", label: "Nome do campo", required: true },
+        {
+          name: "type",
+          label: "Tipo",
+          type: "select",
+          options: [
+            { label: "Texto", value: "Texto" },
+            { label: "Numero", value: "Numero" },
+            { label: "Data", value: "Data" },
+          ],
+        },
+      ],
+      confirmText: "Adicionar campo",
+      onSubmit: (values) => {
+        updateStoredArray("customFields", (list) => [...list, values]);
+        showToast("Campo customizado criado.");
+      },
+    });
+  },
   "new-campaign": () => {
     openCampaignDrawer();
   },

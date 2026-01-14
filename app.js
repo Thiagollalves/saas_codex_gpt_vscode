@@ -71,7 +71,7 @@ const demoUser = {
 const storedTheme = localStorage.getItem("theme");
 if (storedTheme === "dark") {
   document.body.setAttribute("data-theme", "dark");
-  themeToggle.textContent = "Modo claro";
+  if (themeToggle) themeToggle.textContent = "Modo claro";
 }
 
 const setActiveTab = (tab) => {
@@ -134,6 +134,17 @@ const initialTab = document.querySelector(".tab-button.is-active") || tabs[0];
 if (initialTab) {
   setActiveTab(initialTab);
 }
+
+const handleShortcut = (event) => {
+  if (!topSearchInput) return;
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+    event.preventDefault();
+    topSearchInput.focus();
+    showToast("Busca pronta.");
+  }
+};
+
+document.addEventListener("keydown", handleShortcut);
 
 const showToast = (message) => {
   if (!toastContainer) return;
@@ -680,16 +691,20 @@ const attachCardHandlers = (card) => {
   });
 };
 
-addCardButton.addEventListener("click", () => {
-  const newCard = cardTemplate.content.firstElementChild.cloneNode(true);
-  attachCardHandlers(newCard);
-  makeDraggable(newCard);
-  const firstList = kanban.querySelector(".kanban-column .kanban-list");
-  if (firstList) firstList.appendChild(newCard);
-  showToast("Novo lead adicionado ao funil.");
-});
+if (addCardButton && kanban && cardTemplate) {
+  addCardButton.addEventListener("click", () => {
+    const newCard = cardTemplate.content.firstElementChild.cloneNode(true);
+    attachCardHandlers(newCard);
+    makeDraggable(newCard);
+    const firstList = kanban.querySelector(".kanban-column .kanban-list");
+    if (firstList) firstList.appendChild(newCard);
+    showToast("Novo lead adicionado ao funil.");
+  });
+}
 
-kanban.querySelectorAll(".kanban-card").forEach(attachCardHandlers);
+if (kanban) {
+  kanban.querySelectorAll(".kanban-card").forEach(attachCardHandlers);
+}
 draggableItems.forEach(makeDraggable);
 
 appendStoredItems();
@@ -1739,18 +1754,20 @@ if (contactsTable) {
   });
 }
 
-themeToggle.addEventListener("click", () => {
-  const isDark = document.body.getAttribute("data-theme") === "dark";
-  if (isDark) {
-    document.body.removeAttribute("data-theme");
-    localStorage.removeItem("theme");
-    themeToggle.textContent = "Modo escuro";
-  } else {
-    document.body.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "Modo claro";
-  }
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.body.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      document.body.removeAttribute("data-theme");
+      localStorage.removeItem("theme");
+      themeToggle.textContent = "Modo escuro";
+    } else {
+      document.body.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "Modo claro";
+    }
+  });
+}
 
 toggleButtons.forEach((button) => {
   button.addEventListener("click", () => {

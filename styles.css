@@ -97,9 +97,6 @@ body[data-theme="dark"] .sidebar {
   border-bottom: 1px solid var(--border);
 }
 
-body[data-theme="dark"] .top-bar {
-  background: #0b1120;
-}
 
 .logo {
   font-weight: 700;

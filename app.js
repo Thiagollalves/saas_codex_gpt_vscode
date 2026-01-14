@@ -20,6 +20,13 @@ const actionForm = document.getElementById("action-form");
 const actionFields = document.getElementById("action-fields");
 const actionClose = document.getElementById("action-close");
 const actionSubmit = document.getElementById("action-submit");
+const modal = document.getElementById("edit-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalSubtitle = document.getElementById("modal-subtitle");
+const modalForm = document.getElementById("modal-form");
+const modalFields = document.getElementById("modal-fields");
+const modalClose = document.getElementById("modal-close");
+const modalCancel = document.getElementById("modal-cancel");
 const campaignsTable = document.querySelector(".campaigns-table");
 const funnelsGrid = document.querySelector(".funnels-grid");
 const flowsTable = document.querySelector(".flows-table");
@@ -215,6 +222,60 @@ const closeDrawer = () => {
   actionOverlay.setAttribute("aria-hidden", "true");
 };
 
+const openModal = ({ title, subtitle, fields, onSubmit }) => {
+  if (!modal || !modalForm || !modalFields) return;
+  modalTitle.textContent = title;
+  modalSubtitle.textContent = subtitle || "Atualize os dados e salve.";
+  modalFields.innerHTML = "";
+
+  fields.forEach((field) => {
+    const label = document.createElement("label");
+    label.textContent = field.label;
+    let input = null;
+    if (field.type === "select") {
+      input = document.createElement("select");
+      field.options.forEach((option) => {
+        const opt = document.createElement("option");
+        opt.value = option.value;
+        opt.textContent = option.label;
+        if (option.value === field.value) opt.selected = true;
+        input.appendChild(opt);
+      });
+    } else if (field.type === "textarea") {
+      input = document.createElement("textarea");
+      input.value = field.value || "";
+    } else {
+      input = document.createElement("input");
+      input.type = field.type || "text";
+      input.value = field.value || "";
+    }
+    input.name = field.name;
+    if (field.required) input.required = true;
+    label.appendChild(input);
+    modalFields.appendChild(label);
+  });
+
+  modalForm.onsubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(modalForm);
+    const values = {};
+    fields.forEach((field) => {
+      values[field.name] = formData.get(field.name);
+    });
+    onSubmit(values);
+    closeModal();
+  };
+
+  modal.classList.remove("is-hidden");
+  modal.setAttribute("aria-hidden", "false");
+};
+
+const closeModal = () => {
+  if (!modal) return;
+  modal.classList.add("is-hidden");
+  modal.setAttribute("aria-hidden", "true");
+};
+
 const downloadCsv = (filename, rows) => {
   const csvContent = rows
     .map((row) =>
@@ -390,6 +451,22 @@ const getRowText = (row, index) => row.querySelectorAll("span")[index]?.textCont
 
 const toTimeStamp = () =>
   new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+
+const extractContactsFromTable = () => {
+  const rows = getTableRows(contactsTable);
+  return rows.map((row) => ({
+    id: row.dataset.id || createId(),
+    name: getRowText(row, 0),
+    whatsapp: getRowText(row, 1),
+    state: getRowText(row, 2),
+    tags: getRowText(row, 3),
+  }));
+};
+
+if (!storedData.contacts && contactsTable) {
+  storedData.contacts = extractContactsFromTable();
+  saveStoredData(storedData);
+}
 
 const actionMessages = {
   "filter-crm": "Filtro aplicado às oportunidades do CRM.",
@@ -1187,6 +1264,11 @@ const actionHandlers = {
     downloadCsv("contatos.csv", rows);
     showToast("Exportacao de contatos pronta.");
   },
+  "sync-db": () => {
+    const contacts = extractContactsFromTable();
+    updateStoredArray("contacts", () => contacts);
+    showToast("Banco de dados local sincronizado.");
+  },
   "contact-chat": (button) => {
     const row = button.closest(".table-row");
     if (!row) return;
@@ -1224,15 +1306,15 @@ const actionHandlers = {
     const whatsapp = getRowText(row, 1);
     const state = getRowText(row, 2);
     const tags = getRowText(row, 3);
-    openDrawer({
+    openModal({
       title: "Editar contato",
+      subtitle: "Atualize os dados do contato e salve.",
       fields: [
         { name: "name", label: "Nome", value: name, required: true },
         { name: "whatsapp", label: "WhatsApp", value: whatsapp, required: true },
         { name: "state", label: "Estado", value: state, required: true },
         { name: "tags", label: "Tags", value: tags },
       ],
-      confirmText: "Salvar",
       onSubmit: (values) => {
         row.querySelectorAll("span")[0].textContent = values.name;
         row.querySelectorAll("span")[1].textContent = values.whatsapp;
@@ -1497,6 +1579,20 @@ if (actionClose) {
 if (actionOverlay) {
   actionOverlay.addEventListener("click", (event) => {
     if (event.target === actionOverlay) closeDrawer();
+  });
+}
+
+if (modalClose) {
+  modalClose.addEventListener("click", closeModal);
+}
+
+if (modalCancel) {
+  modalCancel.addEventListener("click", closeModal);
+}
+
+if (modal) {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal();
   });
 }
 

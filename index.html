@@ -7,13 +7,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="top-bar">
-    <div class="logo">Kamba CRM</div>
-    <div class="top-search">
-      <input type="search" placeholder="Buscar leads, campanhas ou conversas..." aria-label="Buscar" />
-      <span class="search-hint">⌘K</span>
-    </div>
-    <nav class="top-nav" role="tablist" aria-label="Navegação principal">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="logo">Kamba CRM</div>
+      <nav class="side-nav" role="tablist" aria-label="Navegação principal">
       <button
         id="tab-crm"
         class="tab-button is-active"
@@ -170,15 +167,22 @@
       >
         Settings
       </button>
-    </nav>
-    <div class="top-actions">
-      <button id="theme-toggle" class="ghost" type="button">Modo escuro</button>
-      <button class="ghost" type="button" data-action="notifications">Notificações</button>
-      <div class="avatar" data-action="profile">CS</div>
-    </div>
-  </header>
+      </nav>
+    </aside>
+    <div class="app-content">
+      <header class="top-bar">
+        <div class="top-search">
+          <input type="search" placeholder="Buscar leads, campanhas ou conversas..." aria-label="Buscar" />
+          <span class="search-hint">⌘K</span>
+        </div>
+        <div class="top-actions">
+          <button id="theme-toggle" class="ghost" type="button">Modo escuro</button>
+          <button class="ghost" type="button" data-action="notifications">Notificações</button>
+          <div class="avatar" data-action="profile">CS</div>
+        </div>
+      </header>
 
-  <main>
+      <main>
     <section id="crm" class="tab-panel is-active" role="tabpanel" aria-labelledby="tab-crm">
       <div class="section-header">
         <div>
@@ -548,6 +552,7 @@
           <button class="ghost" type="button" data-action="contacts-import">Importar</button>
           <button class="ghost" type="button" data-action="contacts-delete">Apagar contatos</button>
           <button class="ghost" type="button" data-action="contacts-export">Exportar</button>
+          <button class="secondary" type="button" data-action="sync-db">Sincronizar BD</button>
         </div>
       </div>
       <div class="table-card" data-draggable="true">
@@ -1042,7 +1047,9 @@
         </div>
       </div>
     </section>
-  </main>
+      </main>
+    </div>
+  </div>
 
   <template id="card-template">
     <article class="kanban-card" tabindex="0" data-draggable="true" data-search-item>
@@ -1071,6 +1078,25 @@
   </div>
 
   <div id="toast-container" class="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="edit-modal" class="modal is-hidden" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header>
+        <div>
+          <h3 id="modal-title">Editar</h3>
+          <p id="modal-subtitle">Atualize os dados e salve.</p>
+        </div>
+        <button id="modal-close" class="ghost" type="button">Fechar</button>
+      </header>
+      <form id="modal-form" class="modal-form">
+        <div id="modal-fields" class="modal-fields"></div>
+        <div class="modal-footer">
+          <button class="secondary" type="button" id="modal-cancel">Cancelar</button>
+          <button class="primary" type="submit" id="modal-save">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
